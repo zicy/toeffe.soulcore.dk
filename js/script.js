@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     inputBox.addEventListener('keyup', function (event) {
         const inputValue = event.target.value.trim(); // Trim whitespace
         clearMarker();
-        if (inputValue === '' || inputValue.length < 2) {
+        if (inputValue === '' || inputValue.length < 3) {
             searchResultsContainer.innerHTML = ''; // Clear search results if input is empty
             searchResultsContainer.classList.remove('results');
             event.target.classList.remove('filled'); // Remove 'filled' class if input is empty
