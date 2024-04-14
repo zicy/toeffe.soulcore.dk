@@ -1,6 +1,6 @@
 // Function to search for input value in CSV
 function searchCSV(inputValue) {
-    const csvFile = 'toeffe_lager.csv'; // Path to your CSV file
+    const csvFile = 'toeffe_lager.csv?v=1'; // Path to your CSV file
     const xhr = new XMLHttpRequest();
     xhr.open('GET', csvFile, true);
     xhr.onreadystatechange = function () {
