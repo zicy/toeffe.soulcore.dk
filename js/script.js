@@ -17,15 +17,18 @@ function searchCSV(inputValue) {
                     const newDiv = document.createElement('div');
 
                     // Get lunch box information
-                    let lunch_box_letter = columns[2].match(/[^\d]+/)[0];
-                    let lunch_box_number = parseInt(columns[2].match(/\d+/)[0]);
+                    const lunch_box_letter = columns[2].match(/[^\d]+/)[0];
+                    const lunch_box_number = parseInt(columns[2].match(/\d+/)[0]);
 
-                    newDiv.innerHTML = `<img class="color-${lunch_box_letter}" src="images/MissingTextureBlock.png" ><div class="result-name">${columns[1]} </div><div class="result-extra-info"><div>Lunchbox <span class="">${columns[2]}</span></div> <div>Row <span class="">${columns[3]}</span></div> <div>Position <span class="">${columns[4]}</span></div></div>`;
+                    const item_name = columns[1];
+                    var formatted_name = item_name.toLowerCase().replace(/ /g, '_');
+
+                    newDiv.innerHTML = `<img class="color-${lunch_box_letter}" src="images/block_icons/${formatted_name}.png" onerror="this.onerror=null; this.src='images/MissingTextureBlock.png'" ><div class="result-name">${item_name} </div><div class="result-extra-info"><div>Lunchbox <span class="">${columns[2]}</span></div> <div>Row <span class="">${columns[3]}</span></div> <div>Position <span class="">${columns[4]}</span></div></div>`;
                     newDiv.classList.add('result', 'pop-in'); // Add classes 'result' and 'pop-in' to each div
                     newDiv.style.animationDelay = `${count * 0.1}s`; // Adjust delay time as needed
                     searchResultsContainer.appendChild(newDiv); // Append new result div
                     // Add marker to map
-                    addMarker(columns[1], lunch_box_letter, lunch_box_number, columns[3], columns[4]); // Pass latitude and longitude
+                    addMarker(item_name, lunch_box_letter, lunch_box_number, columns[3], columns[4]); // Pass latitude and longitude
                     count++; // Increment counter
                 }
             }
