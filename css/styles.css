@@ -161,6 +161,11 @@ main {}
       width: 13.6%;
     }
 
+    .lunch-box-B {
+      height: 6.3%;
+      width: 14.8%;
+    }
+
     .I1 {
       top: 71.5%;
       left: 53%;
@@ -249,6 +254,67 @@ main {}
       -o-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
       transform: rotate(90deg);
+    }
+
+    
+    .B1 {
+      top: 28.5%;
+      left: 32%;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    .B2 {
+      top: 20.5%;
+      left: 32%;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    .B3 {
+      top: 12.7%;
+      left: 32%;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    .B4 {
+      top: 28.5%;
+      left: 52.7%;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    .B5 {
+      top: 20.5%;
+      left: 52.7%;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+
+    .B6 {
+      top: 12.7%;
+      left: 52.7%;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
     }
 
   }
