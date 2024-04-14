@@ -15,19 +15,27 @@ function searchCSV(inputValue) {
                 const columns = rows[i].split(',');
                 if (columns.length >= 2 && columns[1].toLowerCase().includes(inputValue.toLowerCase())) {
                     const newDiv = document.createElement('div');
-                    newDiv.innerHTML = `<span><img src="images/MissingTextureBlock.png" ></span><p>Name: ${columns[1]}, Location-1: ${columns[2]}, Location-2: ${columns[3]}, Location-3: ${columns[4]}</p>`;
+
+                    // Get lunch box information
+                    let lunch_box_letter = columns[2].match(/[^\d]+/)[0];
+                    let lunch_box_number = parseInt(columns[2].match(/\d+/)[0]);
+
+                    newDiv.innerHTML = `<img class="color-${lunch_box_letter}" src="images/MissingTextureBlock.png" ><div class="result-name">${columns[1]} </div><div class="result-extra-info"><div>Lunchbox <span class="">${columns[2]}</span></div> <div>Row <span class="">${columns[3]}</span></div> <div>Position <span class="">${columns[4]}</span></div></div>`;
                     newDiv.classList.add('result', 'pop-in'); // Add classes 'result' and 'pop-in' to each div
                     newDiv.style.animationDelay = `${count * 0.1}s`; // Adjust delay time as needed
                     searchResultsContainer.appendChild(newDiv); // Append new result div
                     // Add marker to map
-                    addMarker(columns[1], columns[2], columns[3], columns[4]); // Pass latitude and longitude
+                    addMarker(columns[1], lunch_box_letter, lunch_box_number, columns[3], columns[4]); // Pass latitude and longitude
                     count++; // Increment counter
                 }
             }
             if (count === 0) {
                 const newDiv = document.createElement('div');
-                newDiv.textContent = 'Not found';
-                searchResultsContainer.appendChild(newDiv); // Append "Not found" message if no results found
+
+                newDiv.innerHTML = `<img class="" src="images/MissingTextureBlock.png" ><div class="result-name">Not found: ${inputValue} </div><div class="result-extra-info"><div>Lunchbox <span class="">n/a</span></div> <div>Row <span class="">n/a</span></div> <div>Position <span class="">n/a</span></div></div>`;
+                newDiv.classList.add('result', 'pop-in'); // Add classes 'result' and 'pop-in' to each div
+                newDiv.style.animationDelay = `${count * 0.1}s`; // Adjust delay time as needed
+                searchResultsContainer.appendChild(newDiv); // Append new result div
             }
         }
     };
@@ -56,26 +64,22 @@ function clearMarker() {
 // 3 = top begved
 // 4 = bund bagved
 
-function addMarker(name, lunch_box, level, position) {
+function addMarker(name, lunch_box_letter, lunch_box_number, level, position) {
     const totalItems = 32;
 
-    const mapContainer = document.getElementById(lunch_box);
+    const mapContainer = document.getElementById(lunch_box_letter + lunch_box_number);
     const marker = document.createElement('div');
     const markerPulse = document.createElement('div');
     const markerText = document.createElement('div');
 
-    // Get lunch box information
-    let lunch_box_letter = lunch_box.match(/[^\d]+/)[0];
-    let lunch_box_number = parseInt(lunch_box.match(/\d+/)[0]);
-
     // Calculate position inside div
-    if (lunch_box_number >=4) {
+    if (lunch_box_number >= 4) {
         percentage = ((totalItems - position + 1) / totalItems) * 100 + "%";
     } else {
         percentage = ((position / totalItems) * 100) + "%";
     }
 
-    if (level <=2) {
+    if (level <= 2) {
         front = "0%"
     } else {
         front = "100%"
@@ -83,8 +87,8 @@ function addMarker(name, lunch_box, level, position) {
 
     // calculate anti spin class
     let anti_spin_class = "";
-    
-    switch(lunch_box_letter) {
+
+    switch (lunch_box_letter) {
         case 'I':
             anti_spin_class = "";
             break;
@@ -106,7 +110,7 @@ function addMarker(name, lunch_box, level, position) {
     // Adjust marker position based on latitude and longitude
     marker.style.top = front; // You need to calculate this based on your image dimensions
     marker.style.left = percentage; // You need to calculate this based on your image dimensions
-    
+
     markerPulse.className = 'pulse';
     // Adjust marker position based on latitude and longitude
     markerPulse.style.top = front; // You need to calculate this based on your image dimensions
@@ -126,17 +130,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputBox = document.getElementById('search-input-field');
     const inputBoxIcon = document.getElementById('search-input-icon');
     const searchResultsContainer = document.getElementById('search-results');
-
+    
     // Event listener for input event
     inputBox.addEventListener('keyup', function (event) {
         const inputValue = event.target.value.trim(); // Trim whitespace
         clearMarker();
         if (inputValue === '') {
             searchResultsContainer.innerHTML = ''; // Clear search results if input is empty
+            searchResultsContainer.classList.remove('results');
             event.target.classList.remove('filled'); // Remove 'filled' class if input is empty
             inputBoxIcon.classList.remove('filled2'); // Remove 'filled' class if input is empty
         } else {
             searchCSV(inputValue); // Search CSV for input value
+            searchResultsContainer.classList.add('results');
             event.target.classList.add('filled'); // Add 'filled' class if input has content
             inputBoxIcon.classList.add('filled2'); // Add 'filled' class if input has content
         }

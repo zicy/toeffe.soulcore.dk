@@ -17,13 +17,13 @@
 }
 
 .results {
-    margin-top: 10px;
+    margin: 5vh auto 0 auto;
 
     .result {
         position: relative;
         background-color: white;
         color: #fff;
-        margin: 16px;
+        margin-bottom: 15px;
         border-radius: 999px;
         line-height: 3em;
         border: none;
@@ -31,6 +31,7 @@
         height: 70px;
         display: flex;
         flex-direction: row;
+        width: 541px;
 
         img {
             height: 40px;
@@ -69,8 +70,6 @@
             flex-direction: column;
             margin: auto 0;
             width: 300px;
-
-
         }
 
         .result-extra-info {
@@ -81,6 +80,7 @@
             flex-direction: column;
             width: 130px;
             margin: auto 0;
+            padding-right: 30px;
 
             span {
                 /* display: inline-block; */
