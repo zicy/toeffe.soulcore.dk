@@ -1,5 +1,5 @@
 function searchCSV(inputValue) {
-    const csvFile = 'toeffe_lager.csv?v=4'; // Path to your CSV file
+    const csvFile = 'toeffe_lager.csv?v=5'; // Path to your CSV file
     const xhr = new XMLHttpRequest();
     xhr.open('GET', csvFile, true);
     xhr.onreadystatechange = function () {
