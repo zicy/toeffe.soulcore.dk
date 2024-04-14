@@ -161,3 +161,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+function clear_input(event2) {
+    const inputBox = document.getElementById('search-input-field');
+    var event = new KeyboardEvent('keyup', {
+        key: 'Backspace',           // Specify the key you want to simulate
+        code: 'Backspace',       // Specify the code of the key (optional)
+        keyCode: 83,        // Specify the key code (optional)
+        which: 83,          // Specify the key code (optional)
+        bubbles: true       // Allow the event to bubble up (optional)
+    });
+    inputBox.value = '';
+    inputBox.dispatchEvent(event);
+}
