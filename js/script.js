@@ -148,11 +148,12 @@ document.addEventListener('DOMContentLoaded', function () {
     inputBox.addEventListener('keyup', function (event) {
         const inputValue = event.target.value.trim(); // Trim whitespace
         clearMarker();
-        if (inputValue === '') {
+        if (inputValue === '' || inputValue.length < 2) {
             searchResultsContainer.innerHTML = ''; // Clear search results if input is empty
             searchResultsContainer.classList.remove('results');
             event.target.classList.remove('filled'); // Remove 'filled' class if input is empty
             inputBoxIcon.classList.remove('filled2'); // Remove 'filled' class if input is empty
+
         } else {
             searchCSV(inputValue); // Search CSV for input value
             searchResultsContainer.classList.add('results');
