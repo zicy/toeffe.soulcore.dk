@@ -1,5 +1,3 @@
-// toeffe_lager.csv
-
 // Function to search for input value in CSV
 function searchCSV(inputValue) {
     const csvFile = 'toeffe_lager.csv'; // Path to your CSV file
@@ -21,6 +19,8 @@ function searchCSV(inputValue) {
                     newDiv.classList.add('result', 'pop-in'); // Add classes 'result' and 'pop-in' to each div
                     newDiv.style.animationDelay = `${count * 0.1}s`; // Adjust delay time as needed
                     searchResultsContainer.appendChild(newDiv); // Append new result div
+                    // Add marker to map
+                    addMarker(columns[1], columns[2], columns[3], columns[4]); // Pass latitude and longitude
                     count++; // Increment counter
                 }
             }
@@ -34,6 +34,70 @@ function searchCSV(inputValue) {
     xhr.send();
 }
 
+
+function clearMarker() {
+    const mapContainer = document.getElementById('map-pins');
+    const mapPins = mapContainer.querySelectorAll('div'); // Select all div elements under map-pins
+    mapPins.forEach(pin => {
+        // Update innerHTML for each child div
+        pin.innerHTML = ''; // You can set any content you want here
+    });
+    // mapContainer.innerHTML = '';
+}
+
+// L1 = lunchbox
+// Tæller fra middergang 
+// 32 items per række
+
+
+// række
+// 1 = top
+// 2 = bottom
+// 3 = top begved
+// 4 = bund bagved
+
+function addMarker(name, lunch_box, level, position) {
+    const totalItems = 32;
+
+    const mapContainer = document.getElementById(lunch_box);
+    const marker = document.createElement('div');
+    const markerPulse = document.createElement('div');
+    const markerText = document.createElement('div');
+
+    // Calculate position inside div
+    let lunch_box_number = parseInt(lunch_box.match(/\d+/)[0]);
+    if (lunch_box_number >=4) {
+        percentage = ((totalItems - position + 1) / totalItems) * 100 + "%";
+    } else {
+        percentage = ((position / totalItems) * 100) + "%";
+    }
+
+    if (level <=2) {
+        front = "0%"
+    } else {
+        front = "100%"
+    }
+
+    marker.className = 'pin';
+    // Adjust marker position based on latitude and longitude
+    marker.style.top = front; // You need to calculate this based on your image dimensions
+    marker.style.left = percentage; // You need to calculate this based on your image dimensions
+    
+    markerPulse.className = 'pulse';
+    // Adjust marker position based on latitude and longitude
+    markerPulse.style.top = front; // You need to calculate this based on your image dimensions
+    markerPulse.style.left = percentage; // You need to calculate this based on your image dimensions
+
+    markerText.className = 'text';
+    // Adjust marker position based on latitude and longitude
+    markerText.innerHTML = name;
+    markerText.style.top = front; // You need to calculate this based on your image dimensions
+    markerText.style.left = percentage; // You need to calculate this based on your image dimensions
+    mapContainer.appendChild(marker);
+    mapContainer.appendChild(markerPulse);
+    mapContainer.appendChild(markerText);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const inputBox = document.getElementById('search-input-field');
     const inputBoxIcon = document.getElementById('search-input-icon');
@@ -42,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listener for input event
     inputBox.addEventListener('keyup', function (event) {
         const inputValue = event.target.value.trim(); // Trim whitespace
+        clearMarker();
         if (inputValue === '') {
             searchResultsContainer.innerHTML = ''; // Clear search results if input is empty
             event.target.classList.remove('filled'); // Remove 'filled' class if input is empty
