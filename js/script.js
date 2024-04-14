@@ -1,12 +1,3 @@
-
-document.addEventListener("DOMContentLoaded", function (event) {
-    const divs = document.querySelectorAll('#search-results .pop-in');
-    divs.forEach((div, index) => {
-        div.style.animationDelay = `${index * 0.1}s`; // Adjust delay time as needed
-    });
-});
-
-
 // toeffe_lager.csv
 
 // Function to search for input value in CSV
@@ -26,7 +17,7 @@ function searchCSV(inputValue) {
                 const columns = rows[i].split(',');
                 if (columns.length >= 2 && columns[1].toLowerCase().includes(inputValue.toLowerCase())) {
                     const newDiv = document.createElement('div');
-                    newDiv.innerHTML = `<p>Name: ${columns[1]}, Location-1: ${columns[2]}, Location-2: ${columns[3]}, Location-3: ${columns[4]}</p>`;
+                    newDiv.innerHTML = `<span><img src="images/MissingTextureBlock.png" ></span><p>Name: ${columns[1]}, Location-1: ${columns[2]}, Location-2: ${columns[3]}, Location-3: ${columns[4]}</p>`;
                     newDiv.classList.add('result', 'pop-in'); // Add classes 'result' and 'pop-in' to each div
                     newDiv.style.animationDelay = `${count * 0.1}s`; // Adjust delay time as needed
                     searchResultsContainer.appendChild(newDiv); // Append new result div

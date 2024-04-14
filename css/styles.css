@@ -96,12 +96,22 @@ main {}
     border: none;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
-    a, p {
+    a,
+    p {
       color: black;
       display: block;
       height: 100%;
       width: 100%;
       text-decoration: none;
+    }
+
+    img {
+      float: left;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 2px solid #adb5bd;
+      padding: 2px;
     }
   }
 
