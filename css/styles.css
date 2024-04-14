@@ -158,10 +158,31 @@ main {}
       left: 53%;
     }
 
+    .I2 {
+      top: 79.3%;
+      left: 53%;
+    }
+
+    .I3 {
+      top: 87.1%;
+      left: 53%;
+    }
+
     .I4 {
       top: 71.5%;
       left: 32%;
     }
+
+    .I5 {
+      top: 79.3%;
+      left: 32%;
+    }
+
+    .I6 {
+      top: 87.1%;
+      left: 32%;
+    }
+
   }
 
   .map-marker {
