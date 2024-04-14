@@ -1,4 +1,3 @@
-// Function to search for input value in CSV
 function searchCSV(inputValue) {
     const csvFile = 'toeffe_lager.csv?v=3'; // Path to your CSV file
     const xhr = new XMLHttpRequest();
@@ -7,6 +6,7 @@ function searchCSV(inputValue) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             const csvData = xhr.responseText;
             const rows = csvData.split('\n');
+            let random_id = 0;
             let result = '';
             let count = 0; // Counter for limiting results
             const searchResultsContainer = document.getElementById('search-results');
@@ -15,6 +15,7 @@ function searchCSV(inputValue) {
                 const columns = rows[i].split(',');
                 if (columns.length >= 2 && columns[1].toLowerCase().includes(inputValue.toLowerCase())) {
                     const newDiv = document.createElement('div');
+                    let random_id = Math.floor(Math.random() * 1000000)
 
                     const item_name = columns[1];
                     const lunch_box = columns[2];
@@ -38,7 +39,16 @@ function searchCSV(inputValue) {
                     newDiv.style.animationDelay = `${count * 0.1}s`; // Adjust delay time as needed
                     searchResultsContainer.appendChild(newDiv); // Append new result div
                     // Add marker to map
-                    addMarker(item_name, lunch_box_letter, lunch_box_number, lunch_box_row, lunch_box_position); // Pass latitude and longitude
+                    addMarker(item_name, lunch_box_letter, lunch_box_number, lunch_box_row, lunch_box_position, random_id); // Pass latitude and longitude
+
+                    // Add event listeners to the dynamically created div
+                    newDiv.addEventListener('mouseenter', function () {
+                        hideOtherMarkers(random_id); // Call function to hide other markers
+                    });
+                    newDiv.addEventListener('mouseleave', function () {
+                        showOtherMarkers(); // Clear marker when mouse leaves the result element
+                    });
+
                     count++; // Increment counter
                 }
             }
@@ -55,6 +65,24 @@ function searchCSV(inputValue) {
     xhr.send();
 }
 
+function hideOtherMarkers(random_id) {
+    const mapContainer = document.getElementById('map-pins');
+    const mapPins = mapContainer.querySelectorAll('.mapmarker');
+    mapPins.forEach(pin => {
+        if (!pin.id.includes(random_id)) {
+            pin.style.display = 'none'; // Hide pin
+        }
+    });
+}
+
+
+function showOtherMarkers() {
+    const mapContainer = document.getElementById('map-pins');
+    const mapPins = mapContainer.querySelectorAll('.mapmarker');
+    mapPins.forEach(pin => {
+        pin.style.display = 'unset'; // Hide pin
+    });
+}
 
 function clearMarker() {
     const mapContainer = document.getElementById('map-pins');
@@ -77,13 +105,23 @@ function clearMarker() {
 // 3 = top begved
 // 4 = bund bagved
 
-function addMarker(name, lunch_box_letter, lunch_box_number, level, position) {
+function addMarker(name, lunch_box_letter, lunch_box_number, level, position, random_id) {
     const totalItems = 32;
 
     const mapContainer = document.getElementById(lunch_box_letter + lunch_box_number);
     const marker = document.createElement('div');
     const markerPulse = document.createElement('div');
     const markerText = document.createElement('div');
+
+    // Generate unique identifiers
+    const markerId = random_id + "_marker";
+    const markerPulseId = random_id + "_pulse";
+    const markerTextId = random_id + "_text";
+
+    // Set unique identifiers
+    marker.id = markerId;
+    markerPulse.id = markerPulseId;
+    markerText.id = markerTextId;
 
     // Calculate position inside div
     if (lunch_box_number >= 4) {
@@ -119,17 +157,17 @@ function addMarker(name, lunch_box_letter, lunch_box_number, level, position) {
             anti_spin_class = "";
     }
 
-    marker.className = 'pin';
+    marker.className = 'mapmarker pin';
     // Adjust marker position based on latitude and longitude
     marker.style.top = front; // You need to calculate this based on your image dimensions
     marker.style.left = percentage; // You need to calculate this based on your image dimensions
 
-    markerPulse.className = 'pulse';
+    markerPulse.className = 'mapmarker pulse';
     // Adjust marker position based on latitude and longitude
     markerPulse.style.top = front; // You need to calculate this based on your image dimensions
     markerPulse.style.left = percentage; // You need to calculate this based on your image dimensions
 
-    markerText.className = 'text ' + anti_spin_class;
+    markerText.className = 'mapmarker text ' + anti_spin_class;
     // Adjust marker position based on latitude and longitude
     markerText.innerHTML = name;
     markerText.style.top = front; // You need to calculate this based on your image dimensions
@@ -175,3 +213,4 @@ function clear_input(event2) {
     inputBox.value = '';
     inputBox.dispatchEvent(event);
 }
+
