@@ -11,7 +11,7 @@ function searchCSV(inputValue) {
             let count = 0; // Counter for limiting results
             const searchResultsContainer = document.getElementById('search-results');
             searchResultsContainer.innerHTML = ''; // Clear previous results
-            for (let i = 0; i < rows.length && count < 10; i++) {
+            for (let i = 0; i < rows.length; i++) {
                 const columns = rows[i].split(',');
                 if (columns.length >= 2 && columns[1].toLowerCase().includes(inputValue.toLowerCase())) {
                     const newDiv = document.createElement('div');
