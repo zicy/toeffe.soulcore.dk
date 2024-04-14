@@ -16,19 +16,29 @@ function searchCSV(inputValue) {
                 if (columns.length >= 2 && columns[1].toLowerCase().includes(inputValue.toLowerCase())) {
                     const newDiv = document.createElement('div');
 
+                    const item_name = columns[1];
+                    const lunch_box = columns[2];
+                    const lunch_box_row = columns[3];
+                    const lunch_box_position = columns[4];
+                    const image_name = columns[5];
+
                     // Get lunch box information
                     const lunch_box_letter = columns[2].match(/[^\d]+/)[0];
                     const lunch_box_number = parseInt(columns[2].match(/\d+/)[0]);
 
-                    const item_name = columns[1];
-                    var formatted_name = item_name.toLowerCase().replace(/ /g, '_');
+                    var formatted_name = "";
+                    if (image_name.length <= 1) {
+                        formatted_name = item_name.toLowerCase().replace(/ /g, '_');
+                    } else {
+                        formatted_name = image_name;
+                    }
 
-                    newDiv.innerHTML = `<img class="color-${lunch_box_letter}" src="images/block_icons/${formatted_name}.png" onerror="this.onerror=null; this.src='images/MissingTextureBlock.png'" ><div class="result-name">${item_name} </div><div class="result-extra-info"><div>Lunchbox <span class="">${columns[2]}</span></div> <div>Row <span class="">${columns[3]}</span></div> <div>Position <span class="">${columns[4]}</span></div></div>`;
+                    newDiv.innerHTML = `<img class="color-${lunch_box_letter}" src="images/block_icons/${formatted_name}.png" onerror="this.onerror=null; this.src='images/MissingTextureBlock.png'" ><div class="result-name">${item_name} </div><div class="result-extra-info"><div>Lunchbox <span class="">${lunch_box}</span></div> <div>Row <span class="">${lunch_box_row}</span></div> <div>Position <span class="">${lunch_box_position}</span></div></div>`;
                     newDiv.classList.add('result', 'pop-in'); // Add classes 'result' and 'pop-in' to each div
                     newDiv.style.animationDelay = `${count * 0.1}s`; // Adjust delay time as needed
                     searchResultsContainer.appendChild(newDiv); // Append new result div
                     // Add marker to map
-                    addMarker(item_name, lunch_box_letter, lunch_box_number, columns[3], columns[4]); // Pass latitude and longitude
+                    addMarker(item_name, lunch_box_letter, lunch_box_number, lunch_box_row, lunch_box_position); // Pass latitude and longitude
                     count++; // Increment counter
                 }
             }
@@ -133,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputBox = document.getElementById('search-input-field');
     const inputBoxIcon = document.getElementById('search-input-icon');
     const searchResultsContainer = document.getElementById('search-results');
-    
+
     // Event listener for input event
     inputBox.addEventListener('keyup', function (event) {
         const inputValue = event.target.value.trim(); // Trim whitespace
