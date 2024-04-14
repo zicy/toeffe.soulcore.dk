@@ -15,6 +15,7 @@
         height: 100%;
         aspect-ratio: auto;
         display: block;
+        border-radius: 8px;
     }
 
     #map-pins {
