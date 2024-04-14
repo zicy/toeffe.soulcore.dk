@@ -1,4 +1,5 @@
-﻿1,Pointed Dripstone,I1,1,32
+﻿ID,Item,Lunchbox,Row,Number
+1,Pointed Dripstone,I1,1,32
 2,Obsidian,I1,1,31
 3,Crying Obsidian,I1,1,30
 4,Soul Sand,I1,1,29
@@ -274,7 +275,7 @@
 274,Cut Red Sandstone Slab,G1,3,11
 275,Prismarine Shard,G1,3,12
 276,Prismarine Crystals,G1,3,13
-277, Sea Lantern,G1,3,14
+277,Sea Lantern,G1,3,14
 278,Prismarine,G1,3,15
 279,Prismarine Stairs,G1,3,16
 280,Prismarine Slab,G1,3,17
@@ -352,6 +353,69 @@
 353,Magma Cream 3,G2,2,14
 354,Magma Block 2,G2,2,15
 355,Calcite 2,G2,2,16
+,Elytra,G3,1,1
+,Totem Of Undying,G3,1,2
+,Saddle,G3,1,3
+,Shears,G3,1,4
+,Flint And Steel,G3,1,5
+,Golden Helmet,G3,1,6
+,Iron Horse Armor,G3,1,7
+,Golden Horse Armor,G3,1,8
+,Diamond Horse Armor,G3,1,9
+,Diamond Pickaxe,G3,1,10
+,Diamond Pickaxe,G3,1,11
+,Diamond Shovel,G3,1,12
+,Diamond Axe,G3,1,13
+,Diamond Hoe,G3,1,14
+,Diamond Sword,G3,1,15
+,Diamond Boots,G3,1,16
+,Diamond Leggings,G3,1,17
+,Diamond Chestplate,G3,1,18
+,Diamond Helmet,G3,1,19
+,Mushroom Stew,G3,1,20
+,Suspecious Stew,G3,1,21
+,Beetroot Stew,G3,1,22
+,Water Bucket,G3,1,23
+,Iron Pickaxe,G3,1,24
+,Iron Shovel,G3,1,25
+,Iron Axe,G3,1,26
+,Iron Axe,G3,1,27
+,Iron Sword,G3,1,28
+,Golden Boots,G3,1,29
+,Golden Leggings,G3,1,30
+,Golden Chestplate,G3,1,31
+,Overflow,G3,1,1
+,Overflow,G3,1,2
+,Overflow,G3,1,3
+,Overflow,G3,1,4
+,Overflow,G3,1,5
+,Overflow,G3,1,6
+,Overflow,G3,1,7
+,Overflow,G3,1,8
+,Overflow,G3,1,9
+,Overflow,G3,1,10
+,Overflow,G3,1,11
+,Overflow,G3,1,12
+,Overflow,G3,1,13
+,Overflow,G3,1,14
+,Overflow,G3,1,15
+,Overflow,G3,1,16
+,Sweeping Edge,G3,1,17
+,Multishot,G3,1,18
+,Infinity,G3,1,19
+,Looting,G3,1,20
+,Respiration,G3,1,21
+,Depth Strider,G3,1,22
+,Feather Falling,G3,1,23
+,Protection,G3,1,24
+,Swift Sneak,G3,1,25
+,Swift Sneak,G3,1,26
+,Swift Sneak,G3,1,27
+,Fortune,G3,1,28
+,Silk Touch,G3,1,29
+,Efficiency,G3,1,30
+,Unbreaking,G3,1,31
+,Mending,G3,1,32
 356,Honey Block 2,G4,1,1
 357,Slime Block 2,G4,1,2
 358,Chest,G4,1,3
@@ -765,7 +829,7 @@
 766,Blue Stained Glass Pane,B5,4,18
 767,Brown Stained Glass Pane,B5,4,19
 768,Cyan Stained Glass Pane,B5,4,20
-769,Gray Stained Glass Pane,B5,4,21 
+769,Gray Stained Glass Pane,B5,4,21
 770,Green Stained Glass Pane,B5,4,22
 771,Light Blue Stained Glass Pane,B5,4,23
 772,Light Gray Stained Glass Pane,B5,4,24
