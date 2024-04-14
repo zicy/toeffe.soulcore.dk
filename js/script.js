@@ -1,6 +1,6 @@
 // Function to search for input value in CSV
 function searchCSV(inputValue) {
-    const csvFile = 'toeffe_lager.csv?v=1'; // Path to your CSV file
+    const csvFile = 'toeffe_lager.csv?v=2'; // Path to your CSV file
     const xhr = new XMLHttpRequest();
     xhr.open('GET', csvFile, true);
     xhr.onreadystatechange = function () {
@@ -64,8 +64,11 @@ function addMarker(name, lunch_box, level, position) {
     const markerPulse = document.createElement('div');
     const markerText = document.createElement('div');
 
-    // Calculate position inside div
+    // Get lunch box information
+    let lunch_box_letter = lunch_box.match(/[^\d]+/)[0];
     let lunch_box_number = parseInt(lunch_box.match(/\d+/)[0]);
+
+    // Calculate position inside div
     if (lunch_box_number >=4) {
         percentage = ((totalItems - position + 1) / totalItems) * 100 + "%";
     } else {
@@ -78,6 +81,27 @@ function addMarker(name, lunch_box, level, position) {
         front = "100%"
     }
 
+    // calculate anti spin class
+    let anti_spin_class = "";
+    
+    switch(lunch_box_letter) {
+        case 'I':
+            anti_spin_class = "";
+            break;
+        case 'G':
+            anti_spin_class = "lunch-box-G-AntiRotate lunch-box-G-text";
+            break;
+        case 'B':
+            anti_spin_class = "lunch-box-B-AntiRotate lunch-box-B-text";
+            break;
+        case 'L':
+            anti_spin_class = "lunch-box-L-AntiRotate lunch-box-L-text";
+            break;
+        default:
+            console.log('Unknown fruit.');
+            anti_spin_class = "";
+    }
+
     marker.className = 'pin';
     // Adjust marker position based on latitude and longitude
     marker.style.top = front; // You need to calculate this based on your image dimensions
@@ -88,7 +112,7 @@ function addMarker(name, lunch_box, level, position) {
     markerPulse.style.top = front; // You need to calculate this based on your image dimensions
     markerPulse.style.left = percentage; // You need to calculate this based on your image dimensions
 
-    markerText.className = 'text';
+    markerText.className = 'text ' + anti_spin_class;
     // Adjust marker position based on latitude and longitude
     markerText.innerHTML = name;
     markerText.style.top = front; // You need to calculate this based on your image dimensions

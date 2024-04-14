@@ -149,6 +149,7 @@ main {}
       position: absolute;
       text-align: center;
       text-indent: 0;
+      z-index: 2;
     }
 
     .lunch-box-I {
@@ -161,14 +162,53 @@ main {}
       width: 13.6%;
     }
 
+    .lunch-box-G-AntiRotate {
+      -webkit-transform: rotate(225deg) !important;
+      -moz-transform: rotate(225deg) !important;
+      -o-transform: rotate(225deg) !important;
+      -ms-transform: rotate(225deg) !important;
+      transform: rotate(225deg) !important;
+    }
+
+    
+    .lunch-box-G-text {
+      margin: -60px 0 0 -75px;
+    }
+
     .lunch-box-B {
       height: 6.3%;
       width: 14.8%;
     }
 
+    .lunch-box-B-AntiRotate {
+      -webkit-transform: rotate(135deg) !important;
+      -moz-transform: rotate(135deg) !important;
+      -o-transform: rotate(135deg) !important;
+      -ms-transform: rotate(135deg) !important;
+      transform: rotate(135deg) !important;
+    }
+
+    
+    .lunch-box-B-text {
+      margin: 49px 0 0 -135px;
+    }
+
     .lunch-box-L {
       height: 6.6%;
       width: 13.6%;
+    }
+
+    .lunch-box-L-AntiRotate {
+      -webkit-transform: rotate(45deg) !important;
+      -moz-transform: rotate(45deg) !important;
+      -o-transform: rotate(45deg) !important;
+      -ms-transform: rotate(45deg) !important;
+      transform: rotate(45deg) !important;
+    }
+
+    
+    .lunch-box-L-text {
+      margin: 12px 0 0 -7px;
     }
 
     .I1 {
@@ -412,6 +452,7 @@ main {}
     /* red border */
     text-indent: 0;
     margin: -67px 0 0 -10px;
+    z-index: 50;
 
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
