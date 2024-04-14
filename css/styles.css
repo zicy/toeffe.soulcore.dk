@@ -145,12 +145,20 @@ main {}
 
     .lunch-box {
       border: 1px solid red;
-      height: 6.5%;
-      width: 14.5%;
       z-index: 100;
       position: absolute;
       text-align: center;
       text-indent: 0;
+    }
+
+    .lunch-box-I {
+      height: 6.5%;
+      width: 14.5%;
+    }
+
+    .lunch-box-G {
+      height: 6.6%;
+      width: 13.6%;
     }
 
     .I1 {
@@ -181,6 +189,66 @@ main {}
     .I6 {
       top: 87.1%;
       left: 32%;
+    }
+    
+    .G1 {
+      top: 59.7%;
+      left: 20.0%;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    .G2 {
+      top: 59.7%;
+      left: 11.5%;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    .G3 {
+      top: 59.7%;
+      left: 3.1%;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    .G4 {
+      top: 40.0%;
+      left: 20.0%;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    .G5 {
+      top: 40.0%;
+      left: 11.5%;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    .G6 {
+      top: 40.0%;
+      left: 3.1%;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
     }
 
   }
