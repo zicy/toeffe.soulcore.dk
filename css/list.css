@@ -18,12 +18,16 @@
 
 .results {
     margin: 5vh auto 0 auto;
+    max-height: 60vh;
+    overflow: hidden;
+    overflow-y: scroll;
 
     .result {
         position: relative;
         background-color: white;
         color: #fff;
         margin-bottom: 15px;
+        margin-right: 10px;
         border-radius: 999px;
         line-height: 3em;
         border: none;
