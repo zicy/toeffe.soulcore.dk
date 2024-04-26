@@ -710,7 +710,7 @@
 709,Cut Copper,B1,1,23,
 710,Block of Copper,B1,1,24,copper_block
 711,Raw Copper,B1,1,25,
-712,Block of War Copper,B1,1,26,
+712,Block of Raw Copper,B1,1,26,raw_copper_block
 713,Copper Ingot,B1,1,27,
 714,Deepslate Copper Ore,B1,1,28,
 715,Copper Ore,B1,1,29,
