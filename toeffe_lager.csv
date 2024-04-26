@@ -14,7 +14,7 @@
 13,Nautilus Shell,I1,1,16,
 14,Turtle Egg,I1,1,15,
 15,Lead,I1,1,14,
-16,Empty Map,I1,1,13,
+16,Empty Map,I1,1,13,map
 17,Book,I1,1,12,
 18,Paper,I1,1,11,
 19,Dragon's Breath,I1,1,10,
@@ -23,7 +23,7 @@
 22,Heart of the Sea,I1,1,7,
 23,Beacon,I1,1,6,
 24,Nether Star,I1,1,5,
-25,Bottle o' Enchanting,I1,1,4,
+25,Bottle o' Enchanting,I1,1,4,experience_bottle
 26,Name Tag,I1,1,3,
 27,Soul Lantern,I1,1,2,
 28,Lantern,I1,1,1,
@@ -46,10 +46,10 @@
 45,Podzol,I1,2,16,
 46,Grass Block,I1,2,15,
 47,Cobweb,I1,2,14,
-48,Disc Fragment,I1,2,13,
+48,Disc Fragment,I1,2,13,disc_fragment_5
 49,Echo Shard,I1,2,12,
 50,Sculk Shrieker,I1,2,11,
-51,Sculk Catalys,I1,2,10,
+51,Sculk Catalys,I1,2,10,sculk_catalyst
 52,Sculk Vein,I1,2,9,
 53,Sculk,I1,2,8,
 54,Magma Cream,I1,2,7,
@@ -57,7 +57,7 @@
 56,Pearlescent Froglight,I1,2,5,
 57,Verdant Froglight,I1,2,4,
 58,Ochre Froglight,I1,2,3,
-59,Slimeball,I1,2,2,
+59,Slimeball,I1,2,2,slime_ball
 60,Slime Block,I1,2,1,
 61,Shroomlight,I4,1,1,
 62,Crimson Fungus,I4,1,2,
@@ -78,9 +78,9 @@
 77,Pink Tulip,I4,1,17,
 78,Oxeye Daisy,I4,1,18,
 79,Cornflower,I4,1,19,
-80,Lily of the Calley,I4,1,20,
+80,Lily of the Valley,I4,1,20,lily_of_the_valley
 81,Spore Blossom,I4,1,21,
-82,Bamboo Shoot,I4,1,22,
+82,Bamboo Shoot,I4,1,22,bamboo_sapling
 83,Crimson Roots,I4,1,23,
 84,Warped Roots,I4,1,24,
 85,Nether Sprouts,I4,1,25,
@@ -125,8 +125,8 @@
 124,Melon,I4,3,1,
 125,Pumpkin,I4,3,2,
 126,Carved Pumpkin,I4,3,3,
-127,Jack o'Lantern,I4,3,4,
-128,Hay Bale,I4,3,5,
+127,Jack o'Lantern,I4,3,4,jack_o_lantern
+128,Hay Bale,I4,3,5,hay_block
 129,Wheat,I4,3,6,
 130,Beehive,I4,3,7,
 131,Bee Nest,I4,3,8,
@@ -152,7 +152,7 @@
 151,Dead Bubble Coral Block,I4,4,9,
 152,Dead Horn Coral Block,I4,4,10,
 153,Tube Coral,I4,4,11,
-154,Buble Coral,I4,4,12,
+154,Bubble Coral,I4,4,12,
 155,Brain Coral,I4,4,13,
 156,Fire Coral,I4,4,14,
 157,Horn Coral,I4,4,15,
@@ -180,17 +180,17 @@
 179,Scute,I5,2,5,
 180,Wither Skeleton Skull,I5,3,1,
 181,Sugar,I5,3,2,
-182,Slimeball,I5,3,3,
+182,Slimeball,I5,3,3,slime_ball
 183,Ghast Tear,I5,4,1,
 184,Sniffer Egg,I5,4,2,
 185,Glass Bottle,I5,4,3,
-186,Rabbit's Foot,I5,4,4,
+186,Rabbit's Foot,I5,4,4,rabbit_foot
 187,Spectral Arrow,I5,4,5,
 188,Spider Eye,I5,4,6,
 189,String,I5,4,7,
 190,Fire Charge,I5,4,8,
 191,Fermented Spider Eye,I5,4,9,
-192,Snow Ball,I5,4,10,
+192,SnowBall,I5,4,10,
 193,Ender Pearl,I5,4,11,
 194,Leather,I5,4,12,
 195,Rabbit Hide,I5,4,13,
@@ -214,7 +214,7 @@
 213,Granite Wall,G1,1,4,
 214,Polished Granite,G1,1,5,
 215,Polished Granite Stairs,G1,1,6,
-216,Polisged Granite Slab,G1,1,7,
+216,Polished Granite Slab,G1,1,7,polished_granite_slab
 217,Diorite,G1,1,8,
 218,Diorite Stairs,G1,1,9,
 219,Diorite Slab,G1,1,10,
@@ -252,7 +252,7 @@
 251,Mossy Cobblestone Slab,G1,2,10,
 252,Mossy Cobblestone Wall,G1,2,11,
 253,Smooth Stone,G1,2,12,
-254,Smotth Stone Slab,G1,2,13,
+254,Smooth Stone Slab ,G1,2,13,
 255,Stone Bricks,G1,2,14,
 256,Cracked Stone Bricks,G1,2,15,
 257,Stone Brick Stairs,G1,2,16,
@@ -268,7 +268,7 @@
 267,Deepslate Brick Stairs,G1,2,26,
 268,Deepslate Brick Slab,G1,2,27,
 269,Deepslate Brick Wall,G1,2,28,
-270,Deepslate Tiless,G1,2,29,
+270,Deepslate Tiles,G1,2,29,
 271,Cracked Deepslate Tiles,G1,2,30,
 272,Deepslate Tile Stairs,G1,2,31,
 273,Deepslate Tile Slab,G1,2,32,
@@ -298,7 +298,7 @@
 297,Dark Prismarine Slab,G1,3,24,
 298,End Stone,G1,3,25,
 299,End Stone Bricks,G1,3,26,
-300,End Stone Brick Staris,G1,3,27,
+300,End Stone Brick Stairs,G1,3,27,
 301,End Stone Brick Slab,G1,3,28,
 302,End Stone Brick Wall,G1,3,29,
 303,Brick,G1,4,1,
@@ -328,7 +328,7 @@
 327,Purpur Stairs,G1,4,27,
 328,Purpur Slab,G1,4,28,
 329,End Rod,G1,4,29,
-330,Bastalt,G2,1,1,
+330,Basalt,G2,1,1,
 331,Smooth Basalt,G2,1,2,
 332,Polished Basalt,G2,1,3,
 333,Blackstone,G2,1,4,
@@ -389,7 +389,6 @@
 388,Diamond Horse Armor,G3,2,23,
 389,Golden Horse Armor,G3,2,24,
 390,Iron Horse Armor,G3,2,25,
-391,,G3,2,26,
 392,Golden Helmet,G3,2,27,
 393,Flint And Steel,G3,2,28,
 394,Shears,G3,2,29,
@@ -411,22 +410,22 @@
 410,Overflow,G3,3,13,
 411,Overflow,G3,3,14,
 412,Overflow,G3,3,15,
-413,Mending,G3,4,1,
-414,Unbreaking III,G3,4,2,
-415,Efficiency V,G3,4,3,
-416,Silk Touch,G3,4,4,
-417,Fortune III,G3,4,5,
-418,Swift Sneak III,G3,4,6,
-419,Swift Sneak II,G3,4,7,
-420,Swift Sneak I,G3,4,8,
-421,Protection IV,G3,4,9,
-422,Feather Falling IV,G3,4,10,
-423,Depth Strider III,G3,4,11,
-424,Respiration III,G3,4,12,
-425,Looting III,G3,4,13,
-426,Infinity,G3,4,14,
-427,Multishot,G3,4,15,
-428,Sweeping Edge III,G3,4,16,
+413,Mending,G3,4,1,enchanted_book
+414,Unbreaking III,G3,4,2,enchanted_book
+415,Efficiency V,G3,4,3,enchanted_book
+416,Silk Touch,G3,4,4,enchanted_book
+417,Fortune III,G3,4,5,enchanted_book
+418,Swift Sneak III,G3,4,6,enchanted_book
+419,Swift Sneak II,G3,4,7,enchanted_book
+420,Swift Sneak I,G3,4,8,enchanted_book
+421,Protection IV,G3,4,9,enchanted_book
+422,Feather Falling IV,G3,4,10,enchanted_book
+423,Depth Strider III,G3,4,11,enchanted_book
+424,Respiration III,G3,4,12,enchanted_book
+425,Looting III,G3,4,13,enchanted_book
+426,Infinity,G3,4,14,enchanted_book
+427,Multishot,G3,4,15,enchanted_book
+428,Sweeping Edge III,G3,4,16,enchanted_book
 429,Honey Block,G4,1,1,
 430,Slime Block,G4,1,2,
 431,Trapped Chest,G4,1,3,
@@ -451,7 +450,7 @@
 450,Enchanting Table,G4,1,22,
 451,Fire Charge,G4,1,23,
 452,Ender Chest,G4,1,24,
-453,Fltching Table,G4,1,25,
+453,Fletching Table,G4,1,25,
 454,Grindstone,G4,1,26,
 455,Jukebox,G4,1,27,
 456,Dragon Head,G4,1,28,
@@ -459,11 +458,11 @@
 458,Smithing Table,G4,1,30,
 459,Smoker,G4,1,31,
 460,Stonecutter,G4,1,32,
-461,Redstone Dust,G4,2,1,
-462,Redstone Repeater,G4,2,2,
+461,Redstone Dust,G4,2,1,redstone
+462,Redstone Repeater,G4,2,2,repeater
 463,Block of Redstone,G4,2,3,redstone_block
-464,Redstone Torch,G4,2,4,
-465,Redstone Comparator,G4,2,5,
+464,Redstone Torch,G4,2,4,redstone_torch
+465,Redstone Comparator,G4,2,5,comparator
 466,Lever,G4,2,6,
 467,Hopper,G4,2,7,
 468,Sticky Piston,G4,2,8,
@@ -503,8 +502,8 @@
 502,Birch Sapling,G4,3,15,
 503,Birch Leaves,G4,3,16,
 504,Mangrove Log,G4,3,17,
-505,Mangove Wood,G4,3,18,
-506,Stripped Mangove Log,G4,3,19,
+505,Mangrove Wood,G4,3,18,
+506,Stripped Mangrove Log,G4,3,19,
 507,Stripped Mangrove Wood,G4,3,20,
 508,Mangrove Planks,G4,3,21,
 509,Mangrove Stairs,G4,3,22,
@@ -573,7 +572,7 @@
 572,Crafting Table,G5,1,21,
 573,Bowl,G5,1,22,
 574,Ladder,G5,1,23,
-575,Mangrove,G5,1,30,
+575,Mangrove Roots,G5,1,31,
 576,Muddy Mangrove Roots,G5,1,32,
 577,Oak Log,G5,2,1,
 578,Oak Wood,G5,2,2,
@@ -632,61 +631,56 @@
 631,Crimson Door,G5,4,8,
 632,Crimson Fence,G5,4,9,
 633,Crimson Fence Gate,G5,4,10,
-634,Crimson Trapddor,G5,4,11,
+634,Crimson Trapdor,G5,4,11,
 635,Crimson Pressure Plate,G5,4,12,
 636,Crimson Button,G5,4,13,
 637,Crimson Sign,G5,4,14,
 638,Crimson Nylium,G5,4,15,
 639,Glowstone Dust,G5,4,16,
 640,Glowstone,G5,4,17,
-641,Block of Bamboo,G5,,18,bamboo_block
-642,Bamboo Buttom,G5,,19,
-643,Bamboo Door,G5,,20,
-644,Bamboo Fence,G5,,21,
-645,Bamboo Fence Gate,G5,,22,
-646,Bamboo Mosaic,G5,,23,
-647,Bamboo Mosaic Slab,G5,,24,
-648,Bamboo Mosaic Stairs,G5,,25,
-649,Bamboo Planks,G5,,26,
-650,Bamboo Pressure Plate,G5,,27,
-651,Bamboo Sign,G5,,28,
-652,Bamboo Slab,G5,,29,
-653,Bamboo Stairs,G5,,30,
-654,Bamboo Trapdoor,G5,,31,
-655,Block of Stripped Bamboo,G5,,32,stripped_bamboo_block
-656,Cherry Log,G6,,1,
-657,Cherry Wood,G6,,2,
-658,Stripped Cherry Log,G6,,3,
-659,Stripped Cherry Wood,G6,,4,
-660,Cherry Planks,G6,,5,
-661,Cherry Stairs,G6,,6,
-662,Cherry Slab,G6,,7,
-663,Cherry Door,G6,,8,
-664,Cherry Fence,G6,,9,
-665,Cherry Fence Gate,G6,,10,
-666,Cherry Trapdoor,G6,,11,
-667,Cherry Pressure Plate,G6,,12,
-668,Cherry Buttom,G6,,13,
-669,Cherry Sign,G6,,14,
-670,Cherry Sapling,G6,,15,
-671,Cherry Leaves,G6,,16,
-672,Acacia Hanging sign,G6,,17,
-673,Bamboo Hanging sign,G6,,18,
-674,Birch Hanging sign,G6,,19,
-675,Cherry Hanging sign,G6,,20,
-676,Crimson Hanging sign,G6,,21,
-677,Dark Oak Hanging sign,G6,,22,
-678,Jungle Hanging sign,G6,,23,
-679,Mangrove Hanging sign,G6,,24,
-680,Oak Hanging sign,G6,,25,
-681,Spruce Hanging sign,G6,,26,
-682,Warped Hanging sign,G6,,27,
-683,,G6,,28,
-684,,G6,,29,
-685,,G6,,30,
-686,,G6,,31,
-687,,G6,,32,
-688,Nether Quartz,B1,1,1,
+641,Block of Bamboo,G5,4,18,bamboo_block
+642,Bamboo Button,G5,4,19,
+643,Bamboo Door,G5,4,20,
+644,Bamboo Fence,G5,4,21,
+645,Bamboo Fence Gate,G5,4,22,
+646,Bamboo Mosaic,G5,4,23,
+647,Bamboo Mosaic Slab,G5,4,24,
+648,Bamboo Mosaic Stairs,G5,4,25,
+649,Bamboo Planks,G5,4,26,
+650,Bamboo Pressure Plate,G5,4,27,
+651,Bamboo Sign,G5,4,28,
+652,Bamboo Slab,G5,4,29,
+653,Bamboo Stairs,G5,4,30,
+654,Bamboo Trapdoor,G5,4,31,
+655,Block of Stripped Bamboo,G5,4,32,stripped_bamboo_block
+656,Cherry Log,G6,2,1,
+657,Cherry Wood,G6,2,2,
+658,Stripped Cherry Log,G6,2,3,
+659,Stripped Cherry Wood,G6,2,4,
+660,Cherry Planks,G6,2,5,
+661,Cherry Stairs,G6,2,6,
+662,Cherry Slab,G6,2,7,
+663,Cherry Door,G6,2,8,
+664,Cherry Fence,G6,2,9,
+665,Cherry Fence Gate,G6,2,10,
+666,Cherry Trapdoor,G6,2,11,
+667,Cherry Pressure Plate,G6,2,12,
+668,Cherry Buttom,G6,2,13,
+669,Cherry Sign,G6,2,14,
+670,Cherry Sapling,G6,2,15,
+671,Cherry Leaves,G6,2,16,
+672,Acacia Hanging sign,G6,2,17,
+673,Bamboo Hanging sign,G6,2,18,
+674,Birch Hanging sign,G6,2,19,
+675,Cherry Hanging sign,G6,2,20,
+676,Crimson Hanging sign,G6,2,21,
+677,Dark Oak Hanging sign,G6,2,22,
+678,Jungle Hanging sign,G6,2,23,
+679,Mangrove Hanging sign,G6,2,24,
+680,Oak Hanging sign,G6,2,25,
+681,Spruce Hanging sign,G6,2,26,
+682,Warped Hanging sign,G6,2,27,
+688,Nether Quartz,B1,1,1,quartz
 689,Block of Quartz,B1,1,2,quartz_block
 690,Quartz Stairs,B1,1,3,
 691,Quartz Slab,B1,1,4,
@@ -740,8 +734,8 @@
 739,Iron Ore,B1,2,21,
 740,Deepslate Iron Ore,B1,2,22,
 741,Block of Iron,B1,2,23,iron_block
-742,Lapis Lazuli Ore,B1,2,25,
-743,Deepslate Lapis Lazuli Ore,B1,2,26,
+742,Lapis Lazuli Ore,B1,2,25,lapis_ore
+743,Deepslate Lapis Lazuli Ore,B1,2,26,deepslate_lapis_ore
 744,Block of Lapis Lazuli,B1,2,27,lapis_block
 745,Lapis Lazuli,B1,2,28,
 746,Deepslate Diamond Ore,B1,2,29,
@@ -755,7 +749,7 @@
 754,Small Amethyst Bud,B1,4,5,
 755,Block of Amethyst,B1,4,6,amethyst_block
 756,Firework Rocket,B4,2,1,
-757,Steak,B4,2,2,
+757,Steak,B4,2,2,cooked_beef
 758,Bucket,B4,2,4,
 759,Apple,B4,4,1,
 760,Baked Potato,B4,4,2,
@@ -765,16 +759,16 @@
 764,Carrot,B4,4,6,
 765,Chorus Fruit,B4,4,7,
 766,Cooked Chicken,B4,4,8,
-767,Raw Chicken,B4,4,9,
-768,Raw Cod,B4,4,10,
+767,Raw Chicken,B4,4,9,chicken
+768,Raw Cod,B4,4,10,cod
 769,Cooked Cod,B4,4,11,
-770,Raw Mutton,B4,4,12,
+770,Raw Mutton,B4,4,12,mutton
 771,Cooked Mutton,B4,4,13,
-772,Raw Porkchop,B4,4,14,
+772,Raw Porkchop,B4,4,14,porkchop
 773,Cooked Prokchop,B4,4,15,
-774,Raw Rabbit,B4,4,16,
+774,Raw Rabbit,B4,4,16,rabbit
 775,Cooked Rabbit,B4,4,17,
-776,Raw Salmon,B4,4,18,
+776,Raw Salmon,B4,4,18,salmon
 777,Cooked Salmon,B4,4,19,
 778,Cookie,B4,4,20,
 779,Enchanted Golden Apple,B4,4,21,
@@ -785,7 +779,7 @@
 784,Pufferfish,B4,4,26,
 785,Pumpkin Pie,B4,4,27,
 786,Raw Beef,B4,4,28,beef
-787,Steak,B4,4,29,
+787,Steak,B4,4,29,cooked_beef
 788,Tropical Fish,B4,4,30,
 789,Sweet Berries,B4,4,31,
 790,Candle,B5,1,1,
@@ -901,22 +895,22 @@
 900,Red Stained Glass Pane,B5,4,30,
 901,White Stained Glass Pane,B5,4,31,
 902,Yellow Stained Glass Pane,B5,4,32,
-903,Black Conecrete Powder,B6,1,1,
-904,Blue Conecrete Powder,B6,1,2,
-905,Brown Conecrete Powder,B6,1,3,
-906,Cyan Conecrete Powder,B6,1,4,
-907,Gray Conecrete Powder,B6,1,5,
-908,Green Conecrete Powder,B6,1,6,
-909,Light Blue Conecrete Powder,B6,1,7,
-910,Light Gray Conecrete Powder,B6,1,8,
-911,Lime Conecrete Powder,B6,1,9,
-912,Magenta Conecrete Powder,B6,1,10,
-913,Orange Conecrete Powder,B6,1,11,
-914,Pink Conecrete Powder,B6,1,12,
-915,Puple Conecrete Powder,B6,1,13,
-916,Red Conecrete Powder,B6,1,14,
-917,White Conecrete Powder,B6,1,15,
-918,Yellow Conecrete Powder,B6,1,16,
+903,Black Conecrete Powder,B6,1,1,black_concrete_powder
+904,Blue Conecrete Powder,B6,1,2,blue_concrete_powder
+905,Brown Conecrete Powder,B6,1,3,brown_concrete_powder
+906,Cyan Conecrete Powder,B6,1,4,cyan_concrete_powder
+907,Gray Conecrete Powder,B6,1,5,gray_concrete_powder
+908,Green Conecrete Powder,B6,1,6,green_concrete_powder
+909,Light Blue Conecrete Powder,B6,1,7,light_blue_concrete_powder
+910,Light Gray Conecrete Powder,B6,1,8,light_gray_concrete_powder
+911,Lime Conecrete Powder,B6,1,9,lime_concrete_powder
+912,Magenta Conecrete Powder,B6,1,10,magenta_concrete_powder
+913,Orange Conecrete Powder,B6,1,11,orange_concrete_powder
+914,Pink Conecrete Powder,B6,1,12,pink_concrete_powder
+915,Puple Conecrete Powder,B6,1,13,purple_concrete_powder
+916,Red Conecrete Powder,B6,1,14,red_concrete_powder
+917,White Conecrete Powder,B6,1,15,white_concrete_powder
+918,Yellow Conecrete Powder,B6,1,16,yellow_concrete_powder
 919,Tinted Glass,B6,1,29,
 920,Glass,B6,1,30,
 921,Glass Pane,B6,1,31,
@@ -990,7 +984,7 @@
 989,Sugar Cane,L1,2,19,
 990,Cooked Cod,L1,2,20,
 991,Sand,L1,2,21,
-992,Steak,L1,2,22,
+992,Steak,L1,2,22,cooked_beef
 993,Stone,L1,2,23,
 994,Stone,L1,2,24,
 995,Deppslate,L1,2,25,
@@ -1001,11 +995,11 @@
 1000,Pumpkin,L1,2,30,
 1001,Grass Block,L1,2,31,
 1002,Stone,L1,2,32,
-1003,Steak,L1,4,1,
+1003,Steak,L1,4,1,cooked_beef
 1004,Leather,L1,4,2,
 1005,Egg,L1,4,3,
 1006,Diorite,L1,4,4,
-1007,Steak,L1,4,5,
+1007,Steak,L1,4,5,cooked_beef
 1008,Beetroot,L1,4,6,
 1009,Bread,L1,4,7,
 1010,Iron Ingot,L1,4,8,
@@ -1016,7 +1010,7 @@
 1015,Grass Block,L1,4,13,
 1016,Twisting Vines,L1,4,14,
 1017,Weeping Vines,L1,4,15,
-1018,Steak,L1,4,16,
+1018,Steak,L1,4,16,cooked_beef
 1019,Oak Log,L1,4,17,
 1020,Glass bottle,L1,4,18,
 1021,Egg,L1,4,19,
@@ -1028,8 +1022,8 @@
 1027,Block of Iron,L1,4,25,iron_block
 1028,Ink sac,L1,4,26,
 1029,Prismarine Shard,L1,4,27,
-1030,Raw Cod,L1,4,28,
+1030,Raw Cod,L1,4,28,cod
 1031,Prismarine crystals,L1,4,29,
 1032,Prismarine Shard,L1,4,30,
-1033,Raw Cod,L1,4,31,
+1033,Raw Cod,L1,4,31,cod
 1034,Prismarine Crystals,L1,4,32,

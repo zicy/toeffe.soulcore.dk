@@ -1,5 +1,5 @@
 function searchCSV(inputValue) {
-    const csvFile = 'toeffe_lager.csv?v=12'; // Path to your CSV file
+    const csvFile = 'toeffe_lager.csv?v=13'; // Path to your CSV file
     const xhr = new XMLHttpRequest();
     xhr.open('GET', csvFile, true);
     xhr.onreadystatechange = function () {
@@ -48,6 +48,9 @@ function searchCSV(inputValue) {
                     newDiv.addEventListener('mouseleave', function () {
                         showOtherMarkers(); // Clear marker when mouse leaves the result element
                     });
+                    newDiv.addEventListener('click', function () {
+                        saveMarker(lunch_box_letter + lunch_box_number,random_id); // Clear marker when mouse leaves the result element
+                    });
 
                     count++; // Increment counter
                 }
@@ -92,6 +95,52 @@ function clearMarker() {
         pin.innerHTML = ''; // You can set any content you want here
     });
     // mapContainer.innerHTML = '';
+}
+
+function saveMarker(lunch_box, marker_id) {
+    // Get the parent element of the target div
+    var originalParent = document.getElementById(lunch_box);
+
+    // Array of suffixes for the elements to clone
+    var suffixes = ['_marker', '_pulse', '_text'];
+
+    // Initialize variables
+    var originalElems = [];
+    var copiedElems = [];
+
+    // Loop through each suffix to get original elements and clone them
+    suffixes.forEach(function(suffix) {
+        var originalElem = document.getElementById(marker_id + suffix);
+        if (originalElem) {
+            originalElems.push(originalElem);
+            var clonedElem = originalElem.cloneNode(true);
+            if (suffix === '_marker') {
+                // Add class to the cloned element if the suffix is "_marker"
+                clonedElem.classList.add('pin-saved');
+            }
+            copiedElems.push(clonedElem);
+        }
+    });
+
+    // Check if any original element exists
+    if (originalElems.length > 0) {
+        // Make a copy of the parent div
+        var copiedParent = originalParent.cloneNode(false); // Shallow copy without children
+
+        // Append the copied child divs to the copied parent div
+        copiedElems.forEach(function(copiedElem) {
+            copiedParent.appendChild(copiedElem);
+        });
+
+        // Optionally, modify the copied parent div or its attributes
+        // copiedParent.id = copiedParent.id + '-saved';
+
+        // Append the copied parent div wherever you want in the DOM
+        var savedPinContainer = document.getElementById('map-pins-saved');
+        savedPinContainer.appendChild(copiedParent);
+    } else {
+        console.error("The original parent or the original div doesn't exist.");
+    }
 }
 
 // L1 = lunchbox
