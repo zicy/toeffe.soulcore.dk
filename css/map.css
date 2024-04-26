@@ -6,6 +6,8 @@
     /* margin-top: 20px; */
     /* max-width: 1024px; */
     margin: 5vh auto 0 auto;
+    display: flex;
+    flex-direction: column;
 
     img {
         position: absolute;
@@ -18,10 +20,51 @@
         border-radius: 8px;
     }
 
-    #map-pins, #map-pins-saved {
+    #map-pins-saved-list {
+        position: relative;
+        top: 60.2vh;
+        user-select: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        p {
+            float: left;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-top: calc(.375rem - 2px);
+            margin-right: .375rem;
+            color: whitesmoke;
+            cursor: pointer;
+            border: 1px solid #bdc6d0;
+            border-radius: .2rem;
+            background-color: gray;
+
+            span {
+                float: right;
+                /* padding-right: 3px; */
+                padding-left: 3px;
+                /* margin-right: 1px; */
+                margin-left: 3px;
+                font-weight: 700;
+                color: #bdc6d0;
+            }
+
+            span:hover {
+                color: white;
+            }
+        }
+    }
+
+    #map-pins,
+    #map-pins-saved {
         width: 100%;
         height: 100%;
+        position: absolute;
 
+        .pin-pointer {
+            cursor: pointer;
+        }
 
         .lunch-box {
             /* border: 1px solid red; */
@@ -309,7 +352,12 @@
 }
 
 .pin-saved {
-    background: gold;
+    background: goldenrod !important;
+}
+
+.pulse-saved:after {
+    -webkit-box-shadow: 0 0 1px 2px gold !important;
+    box-shadow: 0 0 1px 2px gold !important;
 }
 
 .pin:after {
@@ -334,6 +382,8 @@
     transform: rotateX(55deg);
     z-index: 5;
 }
+
+
 
 .pulse:after {
     content: "";

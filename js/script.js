@@ -1,5 +1,5 @@
 function searchCSV(inputValue) {
-    const csvFile = 'toeffe_lager.csv?v=13'; // Path to your CSV file
+    const csvFile = 'toeffe_lager.csv?v=14'; // Path to your CSV file
     const xhr = new XMLHttpRequest();
     xhr.open('GET', csvFile, true);
     xhr.onreadystatechange = function () {
@@ -49,7 +49,7 @@ function searchCSV(inputValue) {
                         showOtherMarkers(); // Clear marker when mouse leaves the result element
                     });
                     newDiv.addEventListener('click', function () {
-                        saveMarker(lunch_box_letter + lunch_box_number,random_id); // Clear marker when mouse leaves the result element
+                        saveMarker(lunch_box_letter + lunch_box_number, random_id, item_name); // Clear marker when mouse leaves the result element
                     });
 
                     count++; // Increment counter
@@ -97,7 +97,7 @@ function clearMarker() {
     // mapContainer.innerHTML = '';
 }
 
-function saveMarker(lunch_box, marker_id) {
+function saveMarker(lunch_box, marker_id, marker_name) {
     // Get the parent element of the target div
     var originalParent = document.getElementById(lunch_box);
 
@@ -117,7 +117,14 @@ function saveMarker(lunch_box, marker_id) {
             if (suffix === '_marker') {
                 // Add class to the cloned element if the suffix is "_marker"
                 clonedElem.classList.add('pin-saved');
+            } else if (suffix === '_pulse') {
+                clonedElem.classList.add('pulse-saved');
             }
+            
+            clonedElem.classList.add('pin-pointer');
+            clonedElem.addEventListener('click', function () {
+                removeSavedMarker(marker_id); // Clear marker when mouse leaves the result element
+            });
             copiedElems.push(clonedElem);
         }
     });
@@ -138,9 +145,43 @@ function saveMarker(lunch_box, marker_id) {
         // Append the copied parent div wherever you want in the DOM
         var savedPinContainer = document.getElementById('map-pins-saved');
         savedPinContainer.appendChild(copiedParent);
+
+        // Create a new paragraph element
+        var paragraph = document.createElement('p');
+        paragraph.id = marker_id + '_saved-list';
+        
+        // Set the inner HTML of the paragraph
+        paragraph.innerHTML = marker_name + '<span>×</span>';
+        
+        // Get the div with the ID "map-pins-saved-list"
+        var savedListDiv = document.getElementById('map-pins-saved-list');
+        
+        // Check if the div exists
+        if (savedListDiv) {
+            // Append the paragraph to the div
+            savedListDiv.appendChild(paragraph);
+            paragraph.addEventListener('click', function () {
+                removeSavedMarker(marker_id); // Clear marker when mouse leaves the result element
+            });
+        } else {
+            console.error("The div with ID 'map-pins-saved-list' doesn't exist.");
+        }
     } else {
         console.error("The original parent or the original div doesn't exist.");
     }
+}
+
+function removeSavedMarker(marker_id) {
+
+    // Array of suffixes for the elements to clone
+    var suffixes = ['_marker', '_pulse', '_text', '_saved-list'];
+
+    suffixes.forEach(function(suffix) {
+        var originalElem = document.getElementById(marker_id + suffix);
+        if (originalElem) {
+            originalElem.remove();
+        }
+    });
 }
 
 // L1 = lunchbox

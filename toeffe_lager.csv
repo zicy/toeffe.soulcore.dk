@@ -9,7 +9,7 @@
 8,Chain,I1,1,21,
 9,Iron Bars,I1,1,20,
 10,Campfire,I1,1,19,
-11,Eye of Ender,I1,1,18,
+11,Eye of Ender,I1,1,18,ender_eye
 12,Poisonous Potato,I1,1,17,
 13,Nautilus Shell,I1,1,16,
 14,Turtle Egg,I1,1,15,
@@ -17,7 +17,7 @@
 16,Empty Map,I1,1,13,map
 17,Book,I1,1,12,
 18,Paper,I1,1,11,
-19,Dragon's Breath,I1,1,10,
+19,Dragon's Breath,I1,1,10,dragon_breath
 20,Torch,I1,1,9,
 21,TNT,I1,1,8,
 22,Heart of the Sea,I1,1,7,
@@ -39,7 +39,7 @@
 38,Ice,I1,2,23,
 39,Gravel,I1,2,22,
 40,Dirt,I1,2,21,
-41,Rotted Dirt,I1,2,20,
+41,Rooted Dirt,I1,2,20,
 42,Coarse Dirt,I1,2,19,
 43,Clay,I1,2,18,
 44,Mycelium,I1,2,17,
@@ -107,14 +107,14 @@
 106,Small Dripleaf,I4,2,15,
 107,Chorus Flower,I4,2,16,
 108,Chorus Fruit,I4,2,17,
-109,Popped Chhorus Fruit,I4,2,18,
+109,Popped Chorus Fruit,I4,2,18,
 110,Wheat Seeds,I4,2,19,
 111,Cocoa Beans,I4,2,20,
 112,Pumpkin Seeds,I4,2,21,
 113,Melon Seeds,I4,2,22,
 114,Beetroot Seeds,I4,2,23,
 115,Glow Berries,I4,2,24,
-116,Sweet Berry Bush,I4,2,25,
+116,Sweet Berry,I4,2,25,sweet_berries
 117,Nether Wart,I4,2,26,
 118,Lily Pad,I4,2,27,
 119,Seagrass,I4,2,28,
@@ -174,7 +174,7 @@
 173,Sponge,I4,4,31,
 174,Wet Sponge,I4,4,32,
 175,Soul Torch,I5,2,1,
-176,Ominous Banner,I5,2,2,
+176,Ominous Banner,I5,2,2,gray_banner
 177,Clay Ball,I5,2,3,
 178,Charcoal,I5,2,4,
 179,Scute,I5,2,5,
@@ -221,7 +221,7 @@
 220,Diorite Wall,G1,1,11,
 221,Polished Diorite Slab,G1,1,12,
 222,Polished Diorite Slab,G1,1,13,
-223,Polished Diorite,G1,1,14,
+223,Polished Diorite,G1,1,14,polished_diorite
 224,Andesite,G1,1,15,
 225,Andesite Stairs,G1,1,16,
 226,Andesite Slab,G1,1,17,
@@ -252,7 +252,7 @@
 251,Mossy Cobblestone Slab,G1,2,10,
 252,Mossy Cobblestone Wall,G1,2,11,
 253,Smooth Stone,G1,2,12,
-254,Smooth Stone Slab ,G1,2,13,
+254,Smooth Stone Slab ,G1,2,13,smooth_stone_slab
 255,Stone Bricks,G1,2,14,
 256,Cracked Stone Bricks,G1,2,15,
 257,Stone Brick Stairs,G1,2,16,
@@ -374,7 +374,7 @@
 373,Iron Pickaxe,G3,2,8,
 374,Water Bucket,G3,2,9,
 375,Beetroot Soup,G3,2,10,
-376,Suspecious Stew,G3,2,11,
+376,Suspicious Stew,G3,2,11,
 377,Mushroom Stew,G3,2,12,
 378,Diamond Helmet,G3,2,13,
 379,Diamond Chestplate,G3,2,14,
@@ -395,21 +395,21 @@
 395,Saddle,G3,2,30,
 396,Totem Of Undying,G3,2,31,
 397,Elytra,G3,2,32,
-398,Overflow,G3,3,1,
-399,Overflow,G3,3,2,
-400,Overflow,G3,3,3,
-401,Overflow,G3,3,4,
-402,Overflow,G3,3,5,
-403,Overflow,G3,3,6,
-404,Overflow,G3,3,7,
-405,Overflow,G3,3,8,
-406,Overflow,G3,3,9,
-407,Overflow,G3,3,10,
-408,Overflow,G3,3,11,
-409,Overflow,G3,3,12,
-410,Overflow,G3,3,13,
-411,Overflow,G3,3,14,
-412,Overflow,G3,3,15,
+398,Overflow,G3,3,1,barrier
+399,Overflow,G3,3,2,barrier
+400,Overflow,G3,3,3,barrier
+401,Overflow,G3,3,4,barrier
+402,Overflow,G3,3,5,barrier
+403,Overflow,G3,3,6,barrier
+404,Overflow,G3,3,7,barrier
+405,Overflow,G3,3,8,barrier
+406,Overflow,G3,3,9,barrier
+407,Overflow,G3,3,10,barrier
+408,Overflow,G3,3,11,barrier
+409,Overflow,G3,3,12,barrier
+410,Overflow,G3,3,13,barrier
+411,Overflow,G3,3,14,barrier
+412,Overflow,G3,3,15,barrier
 413,Mending,G3,4,1,enchanted_book
 414,Unbreaking III,G3,4,2,enchanted_book
 415,Efficiency V,G3,4,3,enchanted_book
@@ -620,7 +620,7 @@
 620,Warped Pressure Plate,G5,3,12,
 621,Warped Button,G5,3,13,
 622,Warped Sign,G5,3,14,
-623,Netherrack 2,G5,3,15,
+623,Netherrack,G5,3,15,
 624,Crimson Stem,G5,4,1,
 625,Crimson Hyphae,G5,4,2,
 626,Stripped Crimson Stem,G5,4,3,
@@ -631,7 +631,7 @@
 631,Crimson Door,G5,4,8,
 632,Crimson Fence,G5,4,9,
 633,Crimson Fence Gate,G5,4,10,
-634,Crimson Trapdor,G5,4,11,
+634,Crimson Trapdoor,G5,4,11,
 635,Crimson Pressure Plate,G5,4,12,
 636,Crimson Button,G5,4,13,
 637,Crimson Sign,G5,4,14,
@@ -665,7 +665,7 @@
 665,Cherry Fence Gate,G6,2,10,
 666,Cherry Trapdoor,G6,2,11,
 667,Cherry Pressure Plate,G6,2,12,
-668,Cherry Buttom,G6,2,13,
+668,Cherry Button,G6,2,13,
 669,Cherry Sign,G6,2,14,
 670,Cherry Sapling,G6,2,15,
 671,Cherry Leaves,G6,2,16,
@@ -765,7 +765,7 @@
 770,Raw Mutton,B4,4,12,mutton
 771,Cooked Mutton,B4,4,13,
 772,Raw Porkchop,B4,4,14,porkchop
-773,Cooked Prokchop,B4,4,15,
+773,Cooked Porkchop,B4,4,15,
 774,Raw Rabbit,B4,4,16,rabbit
 775,Cooked Rabbit,B4,4,17,
 776,Raw Salmon,B4,4,18,salmon
@@ -987,7 +987,7 @@
 992,Steak,L1,2,22,cooked_beef
 993,Stone,L1,2,23,
 994,Stone,L1,2,24,
-995,Deppslate,L1,2,25,
+995,Deepslate,L1,2,25,
 996,Carrot,L1,2,26,
 997,Potato,L1,2,27,
 998,Beetroot,L1,2,28,
