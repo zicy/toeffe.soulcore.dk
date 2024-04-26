@@ -1,6 +1,14 @@
+let xhr; // Define xhr outside the function to make it accessible globally
+
 function searchCSV(inputValue) {
+
+    // Cancel previous XMLHttpRequest if it exists
+    if (xhr && xhr.readyState !== 4) {
+        xhr.abort();
+    }
+
     const csvFile = 'toeffe_lager.csv?v=14'; // Path to your CSV file
-    const xhr = new XMLHttpRequest();
+    xhr = new XMLHttpRequest();
     xhr.open('GET', csvFile, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
