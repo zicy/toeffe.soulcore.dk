@@ -461,7 +461,7 @@
 460,Stonecutter,G4,1,32,
 461,Redstone Dust,G4,2,1,
 462,Redstone Repeater,G4,2,2,
-463,Block of Redstone,G4,2,3,
+463,Block of Redstone,G4,2,3,redstone_block
 464,Redstone Torch,G4,2,4,
 465,Redstone Comparator,G4,2,5,
 466,Lever,G4,2,6,
@@ -639,7 +639,7 @@
 638,Crimson Nylium,G5,4,15,
 639,Glowstone Dust,G5,4,16,
 640,Glowstone,G5,4,17,
-641,Block of Bamboo,G5,,18,
+641,Block of Bamboo,G5,,18,bamboo_block
 642,Bamboo Buttom,G5,,19,
 643,Bamboo Door,G5,,20,
 644,Bamboo Fence,G5,,21,
@@ -653,7 +653,7 @@
 652,Bamboo Slab,G5,,29,
 653,Bamboo Stairs,G5,,30,
 654,Bamboo Trapdoor,G5,,31,
-655,Block of Stripped Bamboo,G5,,32,
+655,Block of Stripped Bamboo,G5,,32,stripped_bamboo_block
 656,Cherry Log,G6,,1,
 657,Cherry Wood,G6,,2,
 658,Stripped Cherry Log,G6,,3,
@@ -687,7 +687,7 @@
 686,,G6,,31,
 687,,G6,,32,
 688,Nether Quartz,B1,1,1,
-689,Block of Quartz,B1,1,2,
+689,Block of Quartz,B1,1,2,quartz_block
 690,Quartz Stairs,B1,1,3,
 691,Quartz Slab,B1,1,4,
 692,Chiseled Quartz Block,B1,1,5,
@@ -700,7 +700,7 @@
 699,Waxed Cut Copper Slab,B1,1,13,
 700,Waxed Cut Copper Stairs,B1,1,14,
 701,Waxed Cut Copper,B1,1,15,
-702,Waxed Block of Copper,B1,1,16,
+702,Waxed Block of Copper,B1,1,16,waxed_copper_block
 703,Oxidized Cut Copper Slab,B1,1,17,
 704,Oxidized Cut Copper Stairs,B1,1,18,
 705,Oxidized Cut Copper,B1,1,19,
@@ -708,7 +708,7 @@
 707,Cut Copper Slab,B1,1,21,
 708,Cut Copper Stairs,B1,1,22,
 709,Cut Copper,B1,1,23,
-710,Block of Copper,B1,1,24,
+710,Block of Copper,B1,1,24,copper_block
 711,Raw Copper,B1,1,25,
 712,Block of War Copper,B1,1,26,
 713,Copper Ingot,B1,1,27,
@@ -723,26 +723,26 @@
 722,Gold Ore,B1,2,4,
 723,Deepslate Gold Ore,B1,2,5,
 724,Nether Gold Ore,B1,2,6,
-725,Block of Gold,B1,2,7,
+725,Block of Gold,B1,2,7,gold_block
 726,Iron Nugget,B1,2,8,
 727,Coal,B1,2,9,
 728,Coal Ore,B1,2,10,
 729,Deepslate Coal Ore,B1,2,11,
-730,Block of Coal,B1,2,12,
+730,Block of Coal,B1,2,12,coal_block
 731,Deepslate Redstone Ore,B1,2,13,
 732,Redstone Ore,B1,2,14,
 733,Emerald,B1,2,15,
 734,Emerald Ore,B1,2,16,
 735,Deepslate Emerald Ore,B1,2,17,
-736,Block of Emerald,B1,2,18,
+736,Block of Emerald,B1,2,18,emerald_block
 737,Raw Iron,B1,2,19,
 738,Iron Ingot,B1,2,20,
 739,Iron Ore,B1,2,21,
 740,Deepslate Iron Ore,B1,2,22,
-741,Block of Iron,B1,2,23,
+741,Block of Iron,B1,2,23,iron_block
 742,Lapis Lazuli Ore,B1,2,25,
 743,Deepslate Lapis Lazuli Ore,B1,2,26,
-744,Block of Lapis Lazuli,B1,2,27,
+744,Block of Lapis Lazuli,B1,2,27,lapis_block
 745,Lapis Lazuli,B1,2,28,
 746,Deepslate Diamond Ore,B1,2,29,
 747,Diamond Ore,B1,2,30,
@@ -753,7 +753,7 @@
 752,Large Amethyst Bud,B1,4,3,
 753,Medium Amethyst Bud,B1,4,4,
 754,Small Amethyst Bud,B1,4,5,
-755,Block of Amethyst,B1,4,6,
+755,Block of Amethyst,B1,4,6,amethyst_block
 756,Firework Rocket,B4,2,1,
 757,Steak,B4,2,2,
 758,Bucket,B4,2,4,
@@ -1025,7 +1025,7 @@
 1024,poppy,L1,4,22,
 1025,Stick,L1,4,23,
 1026,Sandstone,L1,4,24,
-1027,Block of Iron,L1,4,25,
+1027,Block of Iron,L1,4,25,iron_block
 1028,Ink sac,L1,4,26,
 1029,Prismarine Shard,L1,4,27,
 1030,Raw Cod,L1,4,28,
