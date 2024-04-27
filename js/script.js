@@ -401,6 +401,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         "url('" + search_bg_path + "mine_1.png')",
         "url('" + search_bg_path + "nether_1.png')",
         "url('" + search_bg_path + "the_end_1.png')",
+        "url('" + search_bg_path + "ancient_city_1.png')",
     ];
     var random = Math.floor(Math.random() * bigSize.length) + 0;
     document.getElementById("background").style.backgroundImage = bigSize[random];
