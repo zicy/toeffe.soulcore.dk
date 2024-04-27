@@ -32,8 +32,7 @@
             float: left;
             padding-left: 5px;
             padding-right: 5px;
-            margin-top: calc(.375rem - 2px);
-            margin-right: .375rem;
+            margin: calc(.375rem - 2px);
             color: whitesmoke;
             cursor: pointer;
             border: 1px solid #bdc6d0;
