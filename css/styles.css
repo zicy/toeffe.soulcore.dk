@@ -30,7 +30,7 @@ body {
 }
 
 .overflow-hidden {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 /* main {} */
