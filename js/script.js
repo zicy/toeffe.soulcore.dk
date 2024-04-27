@@ -310,6 +310,10 @@ function clear_input(event2) {
     inputBox.dispatchEvent(event);
 }
 
+
+
+
+
 // Preload the CSV file
 document.addEventListener('DOMContentLoaded', async function () {
     // Check for localStorage support
@@ -390,4 +394,14 @@ document.addEventListener('DOMContentLoaded', async function () {
             inputBoxIcon.classList.add('filled2'); // Add 'filled' class if input has content
         }
     });
+
+    // Random searchbox bg
+    cont = search_bg_path = "/images/search_background/"
+    var bigSize = [
+        "url('" + search_bg_path + "display_1.png')",
+        "url('" + search_bg_path + "display_2.png')",
+        "url('" + search_bg_path + "display_3.png')",
+    ];
+    var random = Math.floor(Math.random() * bigSize.length) + 0;
+    document.getElementById("header").style.backgroundImage = bigSize[random];
 });
