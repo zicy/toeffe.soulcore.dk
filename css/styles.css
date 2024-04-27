@@ -71,6 +71,10 @@ body {
   width: 100%;
   /* height: 11vh; */
   margin: 0 auto 0 auto;
+  background-image: url(/images/display.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 12vh;
 
   h1 {
     display: block;
