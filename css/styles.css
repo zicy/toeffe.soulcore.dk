@@ -29,6 +29,10 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9a39a3', endColorstr='#4167a8', GradientType=1);
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 /* main {} */
 
 /* .container {

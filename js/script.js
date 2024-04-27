@@ -379,13 +379,13 @@ document.addEventListener('DOMContentLoaded', async function () {
         clearMarker();
         if (inputValue === '' || inputValue.length < 3) {
             searchResultsContainer.innerHTML = ''; // Clear search results if input is empty
-            // searchResultsContainer.classList.remove('results');
+            searchResultsContainer.classList.add('overflow-hidden');
             event.target.classList.remove('filled'); // Remove 'filled' class if input is empty
             inputBoxIcon.classList.remove('filled2'); // Remove 'filled' class if input is empty
 
         } else {
             searchCSV(inputValue); // Search CSV for input value
-            // searchResultsContainer.classList.add('results');
+            searchResultsContainer.classList.remove('overflow-hidden');
             event.target.classList.add('filled'); // Add 'filled' class if input has content
             inputBoxIcon.classList.add('filled2'); // Add 'filled' class if input has content
         }
