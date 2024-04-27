@@ -2,6 +2,8 @@ const csvDataFile = "toeffe_lager.csv?v=15"
 
 // Preload the CSV file
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Pre fetch data
     localStorage.removeItem('csvData');
 
     const xhr = new XMLHttpRequest();
@@ -10,10 +12,48 @@ document.addEventListener('DOMContentLoaded', function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             const csvData = xhr.responseText;
             localStorage.setItem('csvData', csvData); // Store CSV data in localStorage
-            processData(csvData);
         }
     };
     xhr.send();
+
+    // Retrieve stored divs from localStorage
+    var storedPins = localStorage.getItem('savedPins');
+    var storedPinsList = localStorage.getItem('savedPinsList');
+    var storedPinsIds = localStorage.getItem('savedPinsIds');
+
+    // Get references to the divs in the document
+    var savedPins = document.getElementById('map-pins-saved');
+    var savedPinsList = document.getElementById('map-pins-saved-list');
+
+    // Check if both the stored divs and the corresponding divs in the document exist
+    if (storedPins && storedPinsList && savedPins && savedPinsList && storedPinsIds) {
+
+        var storedPinsIds = JSON.parse(storedPinsIds);
+
+        // Replace the content of the divs with the stored content
+        savedPins.innerHTML = storedPins;
+        savedPinsList.innerHTML = storedPinsList;
+
+        // Loop through the array
+        storedPinsIds.forEach(function (marker_id) {
+            // Get the element with the current ID
+            var element = document.getElementById(marker_id);
+
+            // Check if the element exists
+            if (element) {
+                // Add event listener to the element
+                element.addEventListener('click', function () {
+                    removeSavedMarker(marker_id.split('_')[0]); // Clear marker when mouse leaves the result element
+                });
+            } else {
+                console.error("Element with ID", marker_id, "not found.");
+            }
+        });
+    } else {
+        // Handle the case where either the stored divs or the corresponding divs in the document do not exist
+        console.error("Could not find one or more of the required elements.");
+    }
+
 });
 
 function searchCSV(inputValue) {
@@ -113,6 +153,14 @@ function clearMarker() {
 }
 
 function saveMarker(lunch_box, marker_id, marker_name) {
+
+    var storedPinsIds = localStorage.getItem('savedPinsIds');
+    if (storedPinsIds) {
+        var storedPinsIds = JSON.parse(storedPinsIds);
+    } else {
+        var storedPinsIds = [];
+    }
+
     // Get the parent element of the target div
     var originalParent = document.getElementById(lunch_box);
 
@@ -185,6 +233,15 @@ function saveMarker(lunch_box, marker_id, marker_name) {
     } else {
         console.error("The original parent or the original div doesn't exist.");
     }
+
+    suffixes.push('_saved-list');
+    suffixes.forEach(function (suffix) {
+        storedPinsIds.push(marker_id + suffix);
+    });
+
+    localStorage.setItem('savedPinsIds', JSON.stringify(storedPinsIds));
+
+    updateSavedMarkerStorage();
 }
 
 function removeSavedMarker(marker_id) {
@@ -198,6 +255,44 @@ function removeSavedMarker(marker_id) {
             originalElem.remove();
         }
     });
+
+    updateSavedMarkerStorage();
+}
+
+function updateSavedMarkerStorage() {
+
+    var savedPins = document.getElementById('map-pins-saved');
+    var savedPinsList = document.getElementById('map-pins-saved-list');
+    var storedPinsIds = localStorage.getItem('savedPinsIds');
+
+    if (storedPinsIds) {
+        var storedPinsIds = JSON.parse(storedPinsIds);
+    } else {
+        var storedPinsIds = [];
+    }
+
+    if (savedPins && savedPinsList && storedPinsIds) {
+
+        // Create a new array to store the IDs of divs that exist
+        var pinsIds = [];
+
+        // Loop through the array of IDs
+        storedPinsIds.forEach(function(id) {
+            // Get the element with the current ID
+            var element = document.getElementById(id);
+            
+            // If the element exists, add the ID to the new array
+            if (element) {
+                pinsIds.push(id);
+            }
+        });
+
+        localStorage.setItem('savedPins', savedPins.innerHTML); // Store CSV data in localStorage
+        localStorage.setItem('savedPinsList', savedPinsList.innerHTML); // Store CSV data in localStorage
+        localStorage.setItem('savedPinsIds', JSON.stringify(pinsIds));
+
+
+    }
 }
 
 // L1 = lunchbox
@@ -259,7 +354,6 @@ function addMarker(name, lunch_box_letter, lunch_box_number, level, position, ra
             anti_spin_class = "lunch-box-L-AntiRotate lunch-box-L-text";
             break;
         default:
-            console.log('Unknown fruit.');
             anti_spin_class = "";
     }
 
