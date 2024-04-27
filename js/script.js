@@ -396,19 +396,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     // Random searchbox bg
-    cont = search_bg_path = "/images/search_background/"
+    cont = search_bg_path = "/images/background/"
     var bigSize = [
-        "url('" + search_bg_path + "search_bg_1.png')",
-        "url('" + search_bg_path + "search_bg_2.png')",
-        "url('" + search_bg_path + "search_bg_3.png')",
-        "url('" + search_bg_path + "search_bg_4.png')",
-        "url('" + search_bg_path + "search_bg_5.png')",
-        "url('" + search_bg_path + "search_bg_6.png')",
-        "url('" + search_bg_path + "search_bg_7.png')",
-        "url('" + search_bg_path + "search_bg_8.png')",
-        "url('" + search_bg_path + "search_bg_9.png')",
-        "url('" + search_bg_path + "search_bg_10.png')",
+        "url('" + search_bg_path + "mine_1.png')",
+        "url('" + search_bg_path + "nether_1.png')",
+        "url('" + search_bg_path + "the_end_1.png')",
     ];
     var random = Math.floor(Math.random() * bigSize.length) + 0;
-    document.getElementById("header").style.backgroundImage = bigSize[random];
+    document.getElementById("background").style.backgroundImage = bigSize[random];
 });
