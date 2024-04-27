@@ -17,8 +17,8 @@
 }
 
 .results {
-    margin: 5vh auto 0 auto;
-    max-height: 60vh;
+    margin: 4vh auto;
+    height: 71vh;
     overflow: hidden;
     overflow-y: scroll;
 
@@ -26,8 +26,11 @@
         position: relative;
         background-color: white;
         color: #fff;
+        margin: 0 auto 0 auto;
+        margin-top: 0;
+        margin-right: auto;
         margin-bottom: 15px;
-        margin-right: 10px;
+        margin-left: auto;
         border-radius: 999px;
         line-height: 3em;
         border: none;
@@ -37,6 +40,7 @@
         flex-direction: row;
         width: 541px;
         cursor: pointer;
+
 
         img {
             height: 40px;
