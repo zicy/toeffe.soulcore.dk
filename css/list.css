@@ -37,7 +37,7 @@
         height: 70px;
         display: flex;
         flex-direction: row;
-        width: 541px;
+        /* width: 541px; */
         cursor: pointer;
 
 
