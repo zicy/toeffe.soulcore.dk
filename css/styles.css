@@ -46,6 +46,8 @@ body {
   flex-wrap: wrap;
   /* max-width: 1500px; */
   margin: 5vh auto;
+  justify-content: center;
+  gap: 5vh;
 }
 
 .search {
@@ -53,7 +55,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   width: 50vh;
-  margin: 3vh auto;
+  /* margin: 0 auto; */
   position: relative;
 }
 
@@ -84,8 +86,6 @@ body {
     letter-spacing: -0.015em;
   }
 }
-
-
 
 ::-webkit-scrollbar {
   width: 10px;
