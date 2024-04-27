@@ -400,9 +400,29 @@ document.addEventListener('DOMContentLoaded', async function () {
     var bigSize = [
         "url('" + search_bg_path + "mine_1.png')",
         "url('" + search_bg_path + "nether_1.png')",
+        "url('" + search_bg_path + "nether_2.png')",
         "url('" + search_bg_path + "the_end_1.png')",
         "url('" + search_bg_path + "ancient_city_1.png')",
     ];
+
     var random = Math.floor(Math.random() * bigSize.length) + 0;
     document.getElementById("background").style.backgroundImage = bigSize[random];
+
+    // Darkness reader
+    var darknessValue = parseFloat(localStorage.getItem('darkness')) * 100 || 0;
+    var darknessInput = document.getElementById('darkness');
+
+    function updateDarkness(value) {
+        document.body.style.backgroundColor = 'rgba(0, 0, 0, ' + value / 100 + ')';
+        localStorage.setItem('darkness', value / 100);
+    }
+
+    // Initialize darkness value
+    darknessInput.value = darknessValue;
+    updateDarkness(darknessValue);
+
+    // Add an event listener to detect changes in the input value
+    darknessInput.addEventListener('input', function () {
+        updateDarkness(darknessInput.value);
+    });
 });

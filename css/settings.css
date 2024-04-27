@@ -1,0 +1,47 @@
+.setting-container {
+    position: relative;
+}
+
+.darkness-setting {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 1em;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    margin: 1vh 1vh 0 0;
+    float: right;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid black;
+    transition: border 0.2s ease;
+}
+
+.darkness-setting:hover {
+    border: 2px solid grey;
+}
+
+
+
+.darkness-setting:hover+.tooltip {
+    opacity: 1;
+}
+
+.tooltip {
+    float: right;
+    margin: 1vh 1vh 0 0;
+    transform-origin: top right;
+    min-width: 120px;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    background: black;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.tooltip:hover {
+    opacity: 1;
+}

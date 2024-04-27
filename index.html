@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="darkreader" content="pls no darkreader">
-    <link rel="stylesheet" href="css/styles.css?v=17">
+    <link rel="stylesheet" href="css/styles.css?v=18">
+    <link rel="stylesheet" href="css/settings.css?v=1">
     <link rel="stylesheet" href="css/search.css?v=4">
     <link rel="stylesheet" href="css/list.css?v=10">
     <link rel="stylesheet" href="css/map.css?v=8">
@@ -15,6 +16,12 @@
 
 <body>
     <main class="main-bg">
+        <div class="setting-container">
+            <div class="darkness-setting">🌛</div>
+            <div class="tooltip">
+                <input id="darkness" type="range" min="0" max="100" value="50">
+            </div>
+        </div>
         <div class="container-top">
             <div id="header" class="header-top" onload="random_background()">
                 <!-- <h1>Fancy Search Box</h1>
@@ -82,8 +89,9 @@
             </div>
 
         </div>
+
     </main>
-    <script src="js/script.js?v=33"></script>
+    <script src="js/script.js?v=35"></script>
 </body>
 
 </html>
