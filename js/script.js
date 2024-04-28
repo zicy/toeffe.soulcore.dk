@@ -411,10 +411,32 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Darkness reader
     var darknessValue = parseFloat(localStorage.getItem('darkness')) * 100 || 0;
     var darknessInput = document.getElementById('darkness');
+    const darkness_setting = document.getElementById('darkness-setting');
+    var moon_phase = "2";
 
     function updateDarkness(value) {
         document.body.style.backgroundColor = 'rgba(0, 0, 0, ' + value / 100 + ')';
+
+        darkness_setting.innerHTML = getMoonPhase(value);
         localStorage.setItem('darkness', value / 100);
+    }
+
+    function getMoonPhase(value) {
+        let moon_phase;
+        if (value >= 0 && value <= 20) {
+            moon_phase = "🌕";
+        } else if (value >= 21 && value <= 40) {
+            moon_phase = "🌘";
+        } else if (value >= 41 && value <= 60) {
+            moon_phase = "🌗";
+        } else if (value >= 61 && value <= 80) {
+            moon_phase = "🌒";
+        } else if (value >= 81 && value <= 100) {
+            moon_phase = "🌑";
+        } else {
+            moon_phase = "Invalid value";
+        }
+        return moon_phase;
     }
 
     // Initialize darkness value
