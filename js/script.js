@@ -417,25 +417,33 @@ document.addEventListener('DOMContentLoaded', async function () {
     function updateDarkness(value) {
         document.body.style.backgroundColor = 'rgba(0, 0, 0, ' + value / 100 + ')';
 
-        darkness_setting.innerHTML = getMoonPhase(value);
+        darkness_setting.innerHTML = getMoonPhase(value)[0];
+        darkness_setting.style = getMoonPhase(value)[1];
         localStorage.setItem('darkness', value / 100);
     }
 
     function getMoonPhase(value) {
-        let moon_phase;
+        let moon_phase = [];
         if (value >= 0 && value <= 20) {
-            moon_phase = "🌕";
+            moon_phase[0] = "🌕";
+            moon_phase[1] = "transform: scale(1, 1);"
         } else if (value >= 21 && value <= 40) {
-            moon_phase = "🌘";
+            moon_phase[0] = "🌖";
+            moon_phase[1] = "transform: scale(1, 1);"
         } else if (value >= 41 && value <= 60) {
-            moon_phase = "🌗";
+            moon_phase[0] = "🌗";
+            moon_phase[1] = "transform: scale(1, 1);"
         } else if (value >= 61 && value <= 80) {
-            moon_phase = "🌒";
+            moon_phase[0] = "🌒";
+            moon_phase[1] = "transform: scale(-1, 1);"
         } else if (value >= 81 && value <= 100) {
-            moon_phase = "🌑";
+            moon_phase[0] = "🌑";
+            moon_phase[1] = "transform: scale(1, 1);"
         } else {
             moon_phase = "Invalid value";
         }
+
+
         return moon_phase;
     }
 
