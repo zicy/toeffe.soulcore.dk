@@ -1,4 +1,4 @@
-const csvDataFile = "toeffe_lager.csv?v=15"
+const csvDataFile = "toeffe_lager.csv?v=1"
 
 
 
@@ -395,18 +395,31 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     });
 
-    // Random searchbox bg
-    cont = search_bg_path = "/images/background/"
-    var bigSize = [
-        "url('" + search_bg_path + "mine_1.png')",
-        "url('" + search_bg_path + "nether_1.png')",
-        "url('" + search_bg_path + "nether_2.png')",
-        "url('" + search_bg_path + "the_end_1.png')",
-        "url('" + search_bg_path + "ancient_city_1.png')",
+    
+    // Site background
+    images_path = "/images/background/"
+    var img_array = [
+        "url('" + images_path + "mine_1.png')",
+        "url('" + images_path + "nether_1.png')",
+        "url('" + images_path + "nether_2.png')",
+        "url('" + images_path + "the_end_1.png')",
+        "url('" + images_path + "ancient_city_1.png')",
     ];
 
-    var random = Math.floor(Math.random() * bigSize.length) + 0;
-    document.getElementById("background").style.backgroundImage = bigSize[random];
+    var random = Math.floor(Math.random() * img_array.length) + 0;
+    document.getElementById("background").style.backgroundImage = img_array[random];
+
+
+    // Map background
+    images_path = "/images/maps/"
+    var img_array = [
+        images_path + "map_v3.png",
+        images_path + "map_v4.png",
+        images_path + "map_v4_m._toeffe.png",
+    ];
+
+    var random = Math.floor(Math.random() * img_array.length) + 0;
+    document.getElementById("map").src = img_array[random];
 
     // Darkness reader
     var darknessValue = parseFloat(localStorage.getItem('darkness')) * 100 || 0;
