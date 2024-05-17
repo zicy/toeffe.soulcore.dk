@@ -469,49 +469,40 @@ document.addEventListener('DOMContentLoaded', async function () {
         updateDarkness(darknessInput.value);
     });
 
-    /* Player heads on map */ 
-    initMap();
+    /* Player heads on map */
+    var player_map = document.getElementById("map-heads");
 
-    function initMap() {
-        const map = document.getElementById("map-heads");
+    // Top-left and bottom-right coordinates of the map
+    const map_top_x = { left: 15892, right: 15589 };
+    const map_top_z = { top: 1364, bottom: 1665 };
 
-        // Top-left and bottom-right coordinates of the map
-        const top_x = { left: 15892, right: 15589 };
-        const top_z = { top: 1364, bottom: 1665 };
+    // Function to fetch data and update map
+    function fetchDataAndUpdateMap() {
+        fetch('https://map.slimblokken.dk/tiles/players.json')
+            .then(response => response.json())
+            .then(data => {
+                // Filter players in the overworld
+                // const playersInOverworld = data.players.filter(player => player.world === 'minecraft_overworld' && (player.name === 'astroperne' || player.name === 'Toeffe'));
+                const playersInOverworld = data.players.filter(player => player.world === 'minecraft_overworld');
 
-        // Function to fetch data and update map
-        function fetchDataAndUpdateMap() {
-            fetch('https://map.slimblokken.dk/tiles/players.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Filter players in the overworld
-                    // const playersInOverworld = data.players.filter(player => player.world === 'minecraft_overworld' && (player.name === 'astroperne' || player.name === 'Toeffe'));
-                    const playersInOverworld = data.players.filter(player => player.world === 'minecraft_overworld');
+                // Add markers to the map for players in the overworld
+                playersInOverworld.forEach(player => {
+                    const player_cords = { x: Math.abs(player.x), z: player.z };
+                    const percentage_x = calculatePercentage(player_cords.x, map_top_x.left, map_top_x.right);
+                    const percentage_y = calculatePercentage(player_cords.z, map_top_z.top, map_top_z.bottom);
+                    const position = { x: percentage_x, y: percentage_y };
+                    const markerElement = createMarkerElement(position, player, player_map);
 
-                    // Clear existing markers on the map
-                    map.innerHTML = "";
-
-                    // Add markers to the map for players in the overworld
-                    playersInOverworld.forEach(player => {
-                        const player_cords = { x: Math.abs(player.x), z: player.z };
-                        const percentage_x = calculatePercentage(player_cords.x, top_x.left, top_x.right);
-                        const percentage_y = calculatePercentage(player_cords.z, top_z.top, top_z.bottom);
-                        const position = { x: percentage_x, y: percentage_y };
-                        const markerElement = createMarkerElement(position, player);
-                        map.appendChild(markerElement);
-                    });
-                })
-                .catch(error => console.error('Error fetching the markers:', error));
-        }
-
-        // Call fetchDataAndUpdateMap initially
-        fetchDataAndUpdateMap();
-
-        // Call fetchDataAndUpdateMap every 2 seconds
-        setInterval(fetchDataAndUpdateMap, 1000);
+                });
+            })
+            .catch(error => console.error('Error fetching the markers:', error));
     }
 
+    // Call fetchDataAndUpdateMap initially
+    fetchDataAndUpdateMap();
 
+    // Call fetchDataAndUpdateMap every 2 seconds
+    setInterval(fetchDataAndUpdateMap, 1000);
 
     function calculatePercentage(input, lowerBound, upperBound) {
         const range = upperBound - lowerBound;
@@ -522,23 +513,33 @@ document.addEventListener('DOMContentLoaded', async function () {
     }
 
     // Function to create marker element
-    function createMarkerElement(position, player) {
-        const markerElement = document.createElement("div");
-        markerElement.className = "player_head";
+    function createMarkerElement(position, player, map) {
+        let markerElement = document.getElementById(player.uuid);
+
+        // Check if element already exists
+        if (!markerElement) {
+            // If element doesn't exist, create a new one
+            markerElement = document.createElement("div");
+            markerElement.id = player.uuid;
+            markerElement.className = "player_head";
+
+            // Create an img element
+            const imgElement = document.createElement("img");
+            imgElement.alt = player.display_name; // Optional: Set alt text for accessibility
+            markerElement.appendChild(imgElement);
+
+            // Append the markerElement to some container in your HTML
+            document.body.appendChild(markerElement);
+            map.appendChild(markerElement);
+        }
+
+        // Update position
         markerElement.style.left = position.x + "%";
         markerElement.style.top = position.y + "%";
+        // Update image source
+        markerElement.querySelector('img').src = "https://mc-heads.net/avatar/" + player.uuid + "/16";
 
-        // Create an img element
-        const imgElement = document.createElement("img");
-        imgElement.src = "https://mc-heads.net/avatar/" + player.uuid + "/16"; // Set the image URL
-        imgElement.alt = player.display_name; // Optional: Set alt text for accessibility
-
-        markerElement.appendChild(imgElement);
 
         return markerElement;
     }
-
-    // Call the fetchJson function every 1 second
-    // setInterval(fetchJson, 10000);
-
 });
