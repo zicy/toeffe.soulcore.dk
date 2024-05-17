@@ -319,6 +319,19 @@
     }
 }
 
+/* Player heads */
+.player_head {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    z-index: 100;
+    transition: all 0.25s;
+    transform: translate(-50%, -50%);
+
+    img {
+        border-radius: 2px !important;
+    }
+}
 
 /* Map Markers*/
 

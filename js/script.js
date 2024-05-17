@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     });
 
-    
+
     // Site background
     images_path = "/images/background/"
     var img_array = [
@@ -413,9 +413,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Map background
     images_path = "/images/maps/"
     var img_array = [
-        images_path + "map_v3.png",
-        images_path + "map_v4.png",
-        images_path + "map_v4_m._toeffe.png",
+        images_path + "map_v3_test.png",
+        // images_path + "map_v4.png",
+        // images_path + "map_v4_m._toeffe.png",
     ];
 
     var random = Math.floor(Math.random() * img_array.length) + 0;
@@ -468,4 +468,77 @@ document.addEventListener('DOMContentLoaded', async function () {
     darknessInput.addEventListener('input', function () {
         updateDarkness(darknessInput.value);
     });
+
+    /* Player heads on map */ 
+    initMap();
+
+    function initMap() {
+        const map = document.getElementById("map-heads");
+
+        // Top-left and bottom-right coordinates of the map
+        const top_x = { left: 15892, right: 15589 };
+        const top_z = { top: 1364, bottom: 1665 };
+
+        // Function to fetch data and update map
+        function fetchDataAndUpdateMap() {
+            fetch('https://map.slimblokken.dk/tiles/players.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Filter players in the overworld
+                    // const playersInOverworld = data.players.filter(player => player.world === 'minecraft_overworld' && (player.name === 'astroperne' || player.name === 'Toeffe'));
+                    const playersInOverworld = data.players.filter(player => player.world === 'minecraft_overworld');
+
+                    // Clear existing markers on the map
+                    map.innerHTML = "";
+
+                    // Add markers to the map for players in the overworld
+                    playersInOverworld.forEach(player => {
+                        const player_cords = { x: Math.abs(player.x), z: player.z };
+                        const percentage_x = calculatePercentage(player_cords.x, top_x.left, top_x.right);
+                        const percentage_y = calculatePercentage(player_cords.z, top_z.top, top_z.bottom);
+                        const position = { x: percentage_x, y: percentage_y };
+                        const markerElement = createMarkerElement(position, player);
+                        map.appendChild(markerElement);
+                    });
+                })
+                .catch(error => console.error('Error fetching the markers:', error));
+        }
+
+        // Call fetchDataAndUpdateMap initially
+        fetchDataAndUpdateMap();
+
+        // Call fetchDataAndUpdateMap every 2 seconds
+        setInterval(fetchDataAndUpdateMap, 1000);
+    }
+
+
+
+    function calculatePercentage(input, lowerBound, upperBound) {
+        const range = upperBound - lowerBound;
+        const distanceFromLowerBound = input - lowerBound;
+        const percentage = (distanceFromLowerBound / range) * 100;
+
+        return percentage;
+    }
+
+    // Function to create marker element
+    function createMarkerElement(position, player) {
+        const markerElement = document.createElement("div");
+        markerElement.className = "player_head";
+        markerElement.style.left = position.x + "%";
+        markerElement.style.top = position.y + "%";
+
+        // Create an img element
+        const imgElement = document.createElement("img");
+        imgElement.src = "https://mc-heads.net/avatar/" + player.uuid + "/16"; // Set the image URL
+        imgElement.alt = player.display_name; // Optional: Set alt text for accessibility
+
+        markerElement.appendChild(imgElement);
+
+        return markerElement;
+    }
+
+    // Call the fetchJson function every 1 second
+    // setInterval(fetchJson, 10000);
+
 });
