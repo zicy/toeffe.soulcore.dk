@@ -426,10 +426,9 @@ document.addEventListener('DOMContentLoaded', async function () {
         { image: images_path + "pitti1.png", seconds_image: 0, image2: "" },
         { image: images_path + "Toeffe.png", seconds_image: 0, image2: "" },
         { image: images_path + "Toeffe1.png", seconds_image: 0, image2: "" },
-        { image: images_path + "Toeffe2.png", seconds_image: 1, image2: images_path + "pedro.gif" },
+        { image: images_path + "Toeffe2.png", seconds_image: 1, image2: images_path + "Pedro.gif" },
     ];
 
-    console.log(img_array);
     var random = Math.floor(Math.random() * img_array.length) + 0;
     document.getElementById("map").src = img_array[random].image;
 
