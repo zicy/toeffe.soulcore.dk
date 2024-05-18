@@ -413,20 +413,44 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Map background
     images_path = "/images/maps/"
     var img_array = [
-        images_path + "map_v5_Astro.png",
-        images_path + "map_v5_Astro1.png",
-        images_path + "map_v5_Astro_Blah.png",
-        images_path + "map_v5_Astro_vs_Pitti.png",
-        images_path + "map_v5_Jimmi.png",
-        images_path + "map_v5_Kim.png",
-        images_path + "map_v5_Mallar.png",
-        images_path + "map_v5_Pitti.png",
-        images_path + "map_v5_Pitti1.png",
-        images_path + "map_v5_toeffe.png",
+        // { image: images_path + "test.png", seconds_image: 1, image2: images_path + "pedro.gif" },
+        { image: images_path + "Astro.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Astro1.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Astro2.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Jimmi.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Jimmi1.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Kim.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Mallar.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Mallar1.png", seconds_image: 0, image2: "" },
+        { image: images_path + "pitti.png", seconds_image: 0, image2: "" },
+        { image: images_path + "pitti1.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Toeffe.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Toeffe1.png", seconds_image: 0, image2: "" },
+        { image: images_path + "Toeffe2.png", seconds_image: 1, image2: images_path + "pedro.gif" },
     ];
 
+    console.log(img_array);
     var random = Math.floor(Math.random() * img_array.length) + 0;
-    document.getElementById("map").src = img_array[random];
+    document.getElementById("map").src = img_array[random].image;
+
+    if (img_array[random].seconds_image) {
+        let mapElement = document.getElementById("map-container");
+        let referenceNode = document.getElementById("map-pins-saved-list");
+
+        divElement = document.createElement("div");
+        divElement.style = "height: 100%; width: 100%; position: absolute; display: flex;";
+
+        divElement2 = document.createElement("div");
+        divElement2.style = "margin: auto;";
+
+        imgElement = document.createElement("img");
+        imgElement.src = img_array[random].image2; // Optional: Set alt text for accessibility
+        imgElement.style = "height: 20vh; width: 20vh;";
+
+        divElement.appendChild(divElement2);
+        divElement2.appendChild(imgElement);
+        mapElement.insertBefore(divElement, referenceNode);
+    }
 
     // Darkness reader
     var darknessValue = parseFloat(localStorage.getItem('darkness')) * 100 || 0;
@@ -480,8 +504,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     var player_map = document.getElementById("map-heads");
 
     // Top-left and bottom-right coordinates of the map
-    const map_top_x = { left: 15892, right: 15589 };
-    const map_top_z = { top: 1364, bottom: 1665 };
+    const map_top_x = { left: 15906, right: 15575 };
+    const map_top_z = { top: 1350, bottom: 1679 };
 
     // Function to fetch data and update map
     function fetchDataAndUpdateMap() {

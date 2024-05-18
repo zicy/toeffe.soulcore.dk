@@ -9,16 +9,17 @@
     display: flex;
     flex-direction: column;
 
-    img {
+    #map {
         position: absolute;
-        top: 0;
-        left: 0;
+        /* top: 0;
+        left: 0; */
         width: 100%;
         /* height: calc(100% - 50px); */
         height: 100%;
         aspect-ratio: auto;
         display: block;
         border-radius: 8px;
+        z-index: 2;
     }
 
     #map-pins-saved-list {
@@ -125,115 +126,115 @@
         }
 
         .I1 {
-            top: 71.5%;
-            left: 53%;
+            top: 68.2%;
+            left: 52.8%;
         }
 
         .I2 {
-            top: 79.3%;
-            left: 53%;
+            top: 76.1%;
+            left: 52.8%;
         }
 
         .I3 {
-            top: 87.1%;
-            left: 53%;
+            top: 84.1%;
+            left: 52.8%;
         }
 
         .I4 {
-            top: 71.5%;
-            left: 32%;
+            top: 68.2%;
+            left: 32.2%;
         }
 
         .I5 {
-            top: 79.3%;
-            left: 32%;
+            top: 76.1%;
+            left: 32.2%;
         }
 
         .I6 {
-            top: 87.1%;
-            left: 32%;
+            top: 84.1%;
+            left: 32.2%;
         }
 
         .G1 {
-            top: 56.1%;
-            left: 30.4%;
+            top: 53.1%;
+            left: 32.2%;
             transform-origin: top left;
             transform: rotate(90deg);
         }
 
         .G2 {
-            top: 56.1%;
-            left: 21.9%;
+            top: 53.1%;
+            left: 24.2%;
             transform-origin: top left;
             transform: rotate(90deg);
         }
 
         .G3 {
-            top: 56.1%;
-            left: 13.5%;
+            top: 53.1%;
+            left: 16.1%;
             transform-origin: top left;
             transform: rotate(90deg);
         }
 
         .G4 {
-            top: 36.6%;
-            left: 30.5%;
+            top: 33.6%;
+            left: 32.2%;
             transform-origin: top left;
             transform: rotate(90deg);
         }
 
         .G5 {
-            top: 36.6%;
-            left: 21.9%;
+            top: 33.6%;
+            left: 24.2%;
             transform-origin: top left;
             transform: rotate(90deg);
         }
 
         .G6 {
-            top: 36.6%;
-            left: 13.5%;
+            top: 33.6%;
+            left: 16.1%;
             transform-origin: top left;
             transform: rotate(90deg);
         }
 
 
         .B1 {
-            top: 35.2%;
+            top: 32.2%;
             left: 47.0%;
             transform-origin: top left;
             transform: rotate(180deg);
         }
 
         .B2 {
-            top: 27.1%;
+            top: 24.1%;
             left: 47.0%;
             transform-origin: top left;
             transform: rotate(180deg);
         }
 
         .B3 {
-            top: 19.3%;
+            top: 16.3%;
             left: 47.0%;
             transform-origin: top left;
             transform: rotate(180deg);
         }
 
         .B4 {
-            top: 35.2%;
+            top: 32.2%;
             left: 67.8%;
             transform-origin: top left;
             transform: rotate(180deg);
         }
 
         .B5 {
-            top: 27.1%;
+            top: 24.1%;
             left: 67.8%;
             transform-origin: top left;
             transform: rotate(180deg);
         }
 
         .B6 {
-            top: 19.3%;
+            top: 16.3%;
             left: 67.8%;
             transform-origin: top left;
             transform: rotate(180deg);
@@ -241,43 +242,43 @@
 
 
         .L1 {
-            top: 50.3%;
-            left: 69.4%;
+            top: 47.3%;
+            left: 67.9%;
             transform-origin: top left;
             transform: rotate(270deg);
         }
 
         .L2 {
-            top: 50.3%;
-            left: 77.9%;
+            top: 47.3%;
+            left: 75.9%;
             transform-origin: top left;
             transform: rotate(270deg);
         }
 
         .L3 {
-            top: 50.3%;
-            left: 86.4%;
+            top: 47.3%;
+            left: 83.9%;
             transform-origin: top left;
             transform: rotate(270deg);
         }
 
         .L4 {
-            top: 69.9%;
-            left: 69.4%;
+            top: 66.9%;
+            left: 67.9%;
             transform-origin: top left;
             transform: rotate(270deg);
         }
 
         .L5 {
-            top: 69.9%;
-            left: 77.9%;
+            top: 66.9%;
+            left: 75.9%;
             transform-origin: top left;
             transform: rotate(270deg);
         }
 
         .L6 {
-            top: 69.9%;
-            left: 86.4%;
+            top: 66.9%;
+            left: 83.9%;
             transform-origin: top left;
             transform: rotate(270deg);
         }
