@@ -1,4 +1,4 @@
-const csvDataFile = "toeffe_lager.csv?v=1"
+const csvDataFile = "toeffe_lager.csv"
 
 
 
