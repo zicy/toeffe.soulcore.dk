@@ -21,6 +21,7 @@
     height: 88vh;
     overflow: hidden;
     overflow-y: scroll;
+    z-index: 5;
 
     .result {
         position: relative;

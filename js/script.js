@@ -413,9 +413,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Map background
     images_path = "/images/maps/"
     var img_array = [
-        images_path + "map_v3_test.png",
-        // images_path + "map_v4.png",
-        // images_path + "map_v4_m._toeffe.png",
+        images_path + "map_v5_Astro.png",
+        images_path + "map_v5_Astro1.png",
+        images_path + "map_v5_Astro_Blah.png",
+        images_path + "map_v5_Astro_vs_Pitti.png",
+        images_path + "map_v5_Jimmi.png",
+        images_path + "map_v5_Kim.png",
+        images_path + "map_v5_Mallar.png",
+        images_path + "map_v5_Pitti.png",
+        images_path + "map_v5_Pitti1.png",
+        images_path + "map_v5_toeffe.png",
     ];
 
     var random = Math.floor(Math.random() * img_array.length) + 0;

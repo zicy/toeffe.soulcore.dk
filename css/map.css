@@ -14,6 +14,7 @@
         top: 0;
         left: 0;
         width: 100%;
+        /* height: calc(100% - 50px); */
         height: 100%;
         aspect-ratio: auto;
         display: block;
@@ -28,6 +29,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        z-index: 5;
 
         p {
             float: left;
@@ -324,11 +326,12 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    z-index: 100;
+    z-index: 1;
     transition: all 0.5s;
     transform: translate(-50%, -50%);
 
     img {
+        /* height: 100% !important; */
         border-radius: 2px !important;
     }
 }
