@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         imgElement = document.createElement("img");
         imgElement.src = img_array[random].image2; // Optional: Set alt text for accessibility
-        imgElement.style = "height: 20vh; width: 20vh;";
+        imgElement.style = "height: 17vh; /* width: 20vh; */";
 
         divElement.appendChild(divElement2);
         divElement2.appendChild(imgElement);
