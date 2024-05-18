@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         { image: images_path + "Toeffe.png", seconds_image: 0, image2: "" },
         { image: images_path + "Toeffe1.png", seconds_image: 0, image2: "" },
         { image: images_path + "Toeffe2.png", seconds_image: 1, image2: images_path + "Pedro.gif" },
-        { image: images_path + "map_v5.png", seconds_image: 0, "" },
+        { image: images_path + "map_v5.png", seconds_image: 0, image2: "" },
         { image: images_path + "map_v5.png", seconds_image: 1, image2: images_path + "Pedro.gif" },
     ];
 
